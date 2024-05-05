@@ -166,7 +166,7 @@ main {
         margin: 20px auto; /* Center the button horizontally */
     }
 
-    radio-buttons label {
+    .radio-buttons label {
         width: 45%; /* Increase width to fit two buttons per row */
         margin-right: 5%; /* Adjust margin between buttons */
         margin-bottom: 10px; /* Increase margin bottom for better spacing */

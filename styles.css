@@ -148,3 +148,21 @@ main {
 .radio-buttons input[type="radio"]:checked + label img {
     border-color: #333;
 }
+
+/* CSS for mobile devices */
+@media screen and (max-width: 600px) {
+    .preview-container {
+        width: 90%; /* Adjust width for better fit on smaller screens */
+    }
+
+    #character-preview {
+        width: 100%; /* Set width to 100% to fit smaller screens */
+        height: auto; /* Let the height adjust based on image dimensions */
+    }
+
+    #submit-button {
+        display: block; /* Display the submit button as a block element */
+        width: 80%; /* Set width to 80% */
+        margin: 20px auto; /* Center the button horizontally */
+    }
+}

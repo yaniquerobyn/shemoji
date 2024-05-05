@@ -111,4 +111,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial preview update
     updatePreview();
+// Mobile-specific conditions
+function applyMobileConditions() {
+    if (window.innerWidth <= 600) {
+        const submitButton = document.getElementById('submit-button');
+        if (submitButton) {
+            submitButton.style.display = 'block';
+            submitButton.style.width = '80%';
+            submitButton.style.margin = '20px auto';
+        }
+    }
+}
+
+window.addEventListener('resize', applyMobileConditions);
+applyMobileConditions(); // Apply mobile conditions initially
+
 });

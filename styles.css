@@ -190,7 +190,7 @@ main {
     }
 
     .options {
-        width: 90%; /* Adjust width to fit better on smaller screens */
+        width: 10%; /* Adjust width to fit better on smaller screens */
         margin-right: 0; /* Remove right margin */
     }
 }

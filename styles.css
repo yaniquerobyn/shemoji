@@ -155,7 +155,7 @@ main {
     body {
         font-size: 11px; /* Reduce the font size for better readability */
     }
-    
+
     .preview-container {
         width: 90%;
         margin: 20px auto;
@@ -205,4 +205,4 @@ main {
     width: 40%; /* Adjust width to fit well on smaller screens */
     margin-right: 0; /* Remove right margin */
 }
-}
+

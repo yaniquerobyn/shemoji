@@ -17,6 +17,8 @@ header {
 }
 
 .preview-container {
+    position: sticky;
+    top: 0;
     width: 80%; /* Adjust width as needed */
     max-width: 500px; /* Limit maximum width for larger screens */
     margin-top: 0; /* Reduce or remove the margin at the top */
@@ -157,6 +159,8 @@ main {
     }
 
     .preview-container {
+        position: sticky;
+        top: 0;
         width: 90%;
         margin: 20px auto;
         border: 1px solid red; /* Add a red border for debugging */

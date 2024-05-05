@@ -184,6 +184,11 @@ main {
         color: #fff;
         transition: background-color 0.3s ease;
     }
+
+    .options-container {
+        width: 10%; /* Set width for the options container */
+    }
+
     .options {
         width: 90%; /* Adjust width to fit better on smaller screens */
         margin-right: 0; /* Remove right margin */

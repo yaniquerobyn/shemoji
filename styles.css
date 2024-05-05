@@ -177,7 +177,7 @@ main {
     .collapsible {
         cursor: pointer;
         padding: 3px;
-        width: 70%;
+        width: 50%;
         border: none;
         text-align: left;
         outline: none;
@@ -187,11 +187,11 @@ main {
     }
 
     .options-container {
-        width: 10%; /* Set width for the options container */
+        width: 30%; /* Set width for the options container */
     }
 
     .options {
-        width: 10%; /* Adjust width to fit better on smaller screens */
+        width: 30%; /* Adjust width to fit better on smaller screens */
         margin-right: 0; /* Remove right margin */
     }
 }

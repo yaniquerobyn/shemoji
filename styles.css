@@ -150,51 +150,55 @@ main {
 }
 
 /* CSS for mobile devices */
+body {
+    font-size: 11px; /* Reduce the font size for better readability */
+}
+
 @media screen and (max-width: 600px) {
-    .preview-container {
-        width: 90%; /* Adjust width for better fit on smaller screens */
-        max-width: 100%; /* Allow container to take full width */
-    }
+.preview-container {
+    width: 90%; /* Adjust width for better fit on smaller screens */
+    max-width: 100%; /* Allow container to take full width */
+}
 
-    #character-preview {
-        width: 100%; /* Set width to 100% to fit smaller screens */
-        height: auto; /* Let the height adjust based on image dimensions */
-        margin-top: 20px; /* Maintain margin for spacing */
-    }
+#character-preview {
+    width: 100%; /* Set width to 100% to fit smaller screens */
+    height: auto; /* Let the height adjust based on image dimensions */
+    margin-top: 20px; /* Maintain margin for spacing */
+}
 
-    #submit-button {
-        display: block; /* Display the submit button as a block element */
-        width: 80%; /* Set width to 80% */
-        margin: 20px auto; /* Center the button horizontally */
-    }
+#submit-button {
+    display: block; /* Display the submit button as a block element */
+    width: 80%; /* Set width to 80% */
+    margin: 20px auto; /* Center the button horizontally */
+}
 
-    .radio-buttons label {
-        width: 45%; /* Increase width to fit two buttons per row */
-        margin-right: 5%; /* Adjust margin between buttons */
-        margin-bottom: 10px; /* Increase margin bottom for better spacing */
-    }
+.radio-buttons label {
+    width: 45%; /* Increase width to fit two buttons per row */
+    margin-right: 5%; /* Adjust margin between buttons */
+    margin-bottom: 10px; /* Increase margin bottom for better spacing */
+}
 
-    /* Style for the collapsible headings */
-    .collapsible {
-        cursor: pointer;
-        padding: 10px; /* Increase padding for better touch interaction */
-        width: 80%; /* Set width to fit well on smaller screens */
-        border: none;
-        text-align: left;
-        outline: none;
-        background-color: #b83e99;
-        color: #fff;
-        transition: background-color 0.3s ease;
-        margin-bottom: 10px; /* Add some bottom margin for spacing */
-    }
+/* Style for the collapsible headings */
+.collapsible {
+    cursor: pointer;
+    padding: 5px; /* Increase padding for better touch interaction */
+    width: 80%; /* Set width to fit well on smaller screens */
+    border: none;
+    text-align: left;
+    outline: none;
+    background-color: #b83e99;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px; /* Add some bottom margin for spacing */
+}
 
-    .options-container {
-        width: 90%; /* Set width for the options container */
-        margin-bottom: 20px; /* Add bottom margin for spacing */
-    }
+.options-container {
+    width: 5%; /* Set width for the options container */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+}
 
-    .options {
-        width: 90%; /* Adjust width to fit well on smaller screens */
-        margin-right: 0; /* Remove right margin */
-    }
+.options {
+    width: 40%; /* Adjust width to fit well on smaller screens */
+    margin-right: 0; /* Remove right margin */
+}
 }

@@ -153,6 +153,7 @@ main {
 @media screen and (max-width: 600px) {
     .preview-container {
         width: 90%; /* Adjust width for better fit on smaller screens */
+        max-width: 100%; /* Allow container to take full width */
     }
 
     #character-preview {
@@ -170,28 +171,30 @@ main {
     .radio-buttons label {
         width: 45%; /* Increase width to fit two buttons per row */
         margin-right: 5%; /* Adjust margin between buttons */
-        margin-bottom: 5px; /* Increase margin bottom for better spacing */
+        margin-bottom: 10px; /* Increase margin bottom for better spacing */
     }
 
-        /* Style for the collapsible headings */
+    /* Style for the collapsible headings */
     .collapsible {
         cursor: pointer;
-        padding: 3px;
-        width: 50%;
+        padding: 10px; /* Increase padding for better touch interaction */
+        width: 80%; /* Set width to fit well on smaller screens */
         border: none;
         text-align: left;
         outline: none;
         background-color: #b83e99;
         color: #fff;
         transition: background-color 0.3s ease;
+        margin-bottom: 10px; /* Add some bottom margin for spacing */
     }
 
     .options-container {
-        width: 80%; /* Set width for the options container */
+        width: 90%; /* Set width for the options container */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
     }
 
     .options {
-        width: 30%; /* Adjust width to fit better on smaller screens */
+        width: 90%; /* Adjust width to fit well on smaller screens */
         margin-right: 0; /* Remove right margin */
     }
 }

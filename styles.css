@@ -158,6 +158,7 @@ main {
     #character-preview {
         width: 100%; /* Set width to 100% to fit smaller screens */
         height: auto; /* Let the height adjust based on image dimensions */
+        margin-top: 20px; /* Maintain margin for spacing */
     }
 
     #submit-button {
@@ -169,14 +170,14 @@ main {
     .radio-buttons label {
         width: 45%; /* Increase width to fit two buttons per row */
         margin-right: 5%; /* Adjust margin between buttons */
-        margin-bottom: 10px; /* Increase margin bottom for better spacing */
+        margin-bottom: 5px; /* Increase margin bottom for better spacing */
     }
 
         /* Style for the collapsible headings */
     .collapsible {
         cursor: pointer;
         padding: 3px;
-        width: 80%;
+        width: 50%;
         border: none;
         text-align: left;
         outline: none;

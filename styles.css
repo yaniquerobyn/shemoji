@@ -172,6 +172,18 @@ main {
         margin-bottom: 10px; /* Increase margin bottom for better spacing */
     }
 
+        /* Style for the collapsible headings */
+    .collapsible {
+        cursor: pointer;
+        padding: 8px;
+        width: 80%;
+        border: none;
+        text-align: left;
+        outline: none;
+        background-color: #b83e99;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
     .options {
         width: 90%; /* Adjust width to fit better on smaller screens */
         margin-right: 0; /* Remove right margin */

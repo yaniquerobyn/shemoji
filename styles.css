@@ -175,7 +175,7 @@ main {
         /* Style for the collapsible headings */
     .collapsible {
         cursor: pointer;
-        padding: 8px;
+        padding: 3px;
         width: 80%;
         border: none;
         text-align: left;

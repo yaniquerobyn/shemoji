@@ -150,20 +150,24 @@ main {
 }
 
 /* CSS for mobile devices */
-body {
-    font-size: 11px; /* Reduce the font size for better readability */
-}
-
 @media screen and (max-width: 600px) {
-.preview-container {
-    width: 90%; /* Adjust width for better fit on smaller screens */
-    max-width: 100%; /* Allow container to take full width */
-}
 
-#character-preview {
-    width: 100%; /* Set width to 100% to fit smaller screens */
-    height: auto; /* Let the height adjust based on image dimensions */
-    margin-top: 20px; /* Maintain margin for spacing */
+    body {
+        font-size: 11px; /* Reduce the font size for better readability */
+    }
+    
+    .preview-container {
+        width: 90%;
+        margin: 20px auto;
+        border: 1px solid red; /* Add a red border for debugging */
+    }
+
+    #character-preview {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border: 1px solid blue; /* Add a blue border for debugging */
+    }
 }
 
 #submit-button {

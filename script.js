@@ -148,6 +148,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitButton.style.width = '80%';
                 submitButton.style.margin = '20px auto';
             }
+            // Additional mobile adjustments here...
+        } else {
+            // Reset styles if viewport width is greater than 600px
+            const submitButton = document.getElementById('submit-button');
+            if (submitButton) {
+                submitButton.style.display = '';
+                submitButton.style.width = '';
+                submitButton.style.margin = '';
+            }
+            // Additional desktop adjustments here...
         }
     }
 

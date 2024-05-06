@@ -17,24 +17,34 @@ header {
     width: 100%;
 }
 
+/*.camera-image-container {
+    position: sticky;
+    top: 0;
+    width: 80%;
+    max-width: 500px;
+    margin-top: 0;
+    padding-top: 20px;
+    text-align: center;
+    position: relative;
+}*/
+
 .preview-container {
     position: sticky;
     top: 0;
     width: 80%;
     max-width: 500px;
-    margin-top: 20px; /* Adjusted top margin to provide space */
+    margin-top: 0;
     padding-top: 20px;
     text-align: center;
-
+    position: relative;
 }
 
 #character-preview {
-    width: 100%;
-    max-height: 600px; /* Adjusted max-height to maintain aspect ratio */
+    width: 500px;
+    height: 600px;
     margin-top: 20px;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Added overflow property to handle overflowing content */
 }
 
 #character-preview img {
@@ -143,18 +153,20 @@ main {
     .preview-container {
         position: sticky;
         top: 20px; /* Adjusted the top value to give space */
-        width: 90%;
+        width: 80%;
         max-width: 500px;
-        margin: 20px auto;
+        margin-top: 0;
         padding-top: 20px;
         text-align: center;
+        position: relative;
+       /* border: 1px solid red; */
     }
     
     #character-preview {
         width: 100%;
         height: 400px;
         margin-top: 20px;
-        overflow: hidden; /* Added overflow property to handle overflowing content */
+       /* border: 1px solid blue; */
     }
     #submit-button {
         display: block;

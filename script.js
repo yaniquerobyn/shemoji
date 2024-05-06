@@ -24,11 +24,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updatePreview() {
+
+        // Preload all images before updating the character preview
+        const preloadImages = [
+            'fullImages/background/',
+            'fullImages/skin/',
+            'fullImages/eyes/',
+            'fullImages/otherFeatures/',
+            'fullImages/shoes/',
+            'fullImages/bottoms/',
+            'fullImages/tops/',
+            'fullImages/earrings/',
+            'fullImages/hairstyle/',
+            'fullImages/camera.png' // Corrected here
+        ];
+
         // Get the selected options
         const selectedBackground = document.querySelector('input[name="background"]:checked').value;
         const selectedSkin = document.querySelector('input[name="skin"]:checked').value;
         const selectedEyes = document.querySelector('input[name="eyes"]:checked').value;
         const selectedHairstyle = document.querySelector('input[name="hairstyle"]:checked').value;
+
+        // Hide all hair color options
+        const hairColorContainers = document.querySelectorAll('.color-options');
+        hairColorContainers.forEach(container => {
+            container.style.display = "none";
+        });
+
+        // Show hair color options for the selected hairstyle
+        const selectedHairColorContainer = document.getElementById(selectedHairstyle + "-color-options");
+        if (selectedHairColorContainer) {
+            selectedHairColorContainer.style.display = "block";
+        }
+
         const selectedHairColor = document.querySelector('input[name="hair-color"]:checked').value;
         const selectedTops = document.querySelector('input[name="tops"]:checked').value;
         const selectedBottoms = document.querySelector('input[name="bottoms"]:checked').value;
@@ -48,60 +76,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
         const CameraImagePath = 'fullImages/camera.png';
 
-        // Preload the necessary images before updating the character preview
-        const preloadImages = [
-            backgroundImagePath,
-            skinImagePath,
-            eyesImagePath,
-            hairstyleImagePath,
-            topsImagePath,
-            bottomsImagePath,
-            shoesImagePath,
-            earringsImagePath,
-            otherFeaturesImagePath,
-            CameraImagePath
-        ];
-
-        // Load all images
-        const imagesLoadedPromises = preloadImages.map(imagePath => {
-            return new Promise(resolve => {
-                const img = new Image();
-                img.onload = () => resolve();
-                img.src = imagePath;
-            });
-        });
-
-        // Wait for all images to be loaded
-        Promise.all(imagesLoadedPromises).then(() => {
-            // Construct the HTML for the stacked preview
+        // Construct the HTML for the stacked preview
             const previewHTML = `
-                <img src="${backgroundImagePath}" alt="Background">
-                <img src="${skinImagePath}" alt="Skin Tone">
-                <img src="${eyesImagePath}" alt="Eye Color">
-                <img src="${otherFeaturesImagePath}" alt="Other Features">
-                <img src="${hairstyleImagePath}" alt="Hairstyle">
-                <img src="${CameraImagePath}" alt="Camera"> <!-- Corrected here -->
-                <img src="${shoesImagePath}" alt="Shoes">
-                <img src="${bottomsImagePath}" alt="Bottoms">
-                <img src="${topsImagePath}" alt="Tops">
-                <img src="${earringsImagePath}" alt="Earrings">
-            `;
+            <img src="${backgroundImagePath}" alt="Background">
+            <img src="${skinImagePath}" alt="Skin Tone">
+            <img src="${eyesImagePath}" alt="Eye Color">
+            <img src="${otherFeaturesImagePath}" alt="Other Features">
+            <img src="${hairstyleImagePath}" alt="Hairstyle">
+            <img src="${CameraImagePath}" alt="Camera"> <!-- Corrected here -->
+            <img src="${shoesImagePath}" alt="Shoes">
+            <img src="${bottomsImagePath}" alt="Bottoms">
+            <img src="${topsImagePath}" alt="Tops">
+            <img src="${earringsImagePath}" alt="Earrings">
+        `;
+    
 
-            // Update character preview with the stacked images
-            characterPreview.innerHTML = previewHTML;
-
-            // Hide all hair color options
-            const hairColorContainers = document.querySelectorAll('.color-options');
-            hairColorContainers.forEach(container => {
-                container.style.display = "none";
-            });
-
-            // Show hair color options for the selected hairstyle
-            const selectedHairColorContainer = document.getElementById(selectedHairstyle + "-color-options");
-            if (selectedHairColorContainer) {
-                selectedHairColorContainer.style.display = "block";
-            }
-        });
+        // Update character preview with the stacked images
+        characterPreview.innerHTML = previewHTML;
     }
 
     // Get all radio button options
@@ -138,29 +129,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial preview update
     updatePreview();
-
-    // Mobile-specific conditions
-    function applyMobileConditions() {
-        if (window.innerWidth <= 600) {
-            const submitButton = document.getElementById('submit-button');
-            if (submitButton) {
-                submitButton.style.display = 'block';
-                submitButton.style.width = '80%';
-                submitButton.style.margin = '20px auto';
-            }
-            // Additional mobile adjustments here...
-        } else {
-            // Reset styles if viewport width is greater than 600px
-            const submitButton = document.getElementById('submit-button');
-            if (submitButton) {
-                submitButton.style.display = '';
-                submitButton.style.width = '';
-                submitButton.style.margin = '';
-            }
-            // Additional desktop adjustments here...
+// Mobile-specific conditions
+function applyMobileConditions() {
+    if (window.innerWidth <= 600) {
+        const submitButton = document.getElementById('submit-button');
+        if (submitButton) {
+            submitButton.style.display = 'block';
+            submitButton.style.width = '80%';
+            submitButton.style.margin = '20px auto';
         }
     }
+}
 
-    window.addEventListener('resize', applyMobileConditions);
-    applyMobileConditions(); // Apply mobile conditions initially
+window.addEventListener('resize', applyMobileConditions);
+applyMobileConditions(); // Apply mobile conditions initially
+
 });

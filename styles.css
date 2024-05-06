@@ -140,6 +140,8 @@ main {
         font-size: 11px;
     }
     .preview-container {
+        position: sticky;
+        top: 0;
         width: 90%;
         margin: 20px auto;
         border: 1px solid red;

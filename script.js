@@ -43,23 +43,43 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedHairColorContainer.style.display = "block";
         }
 
+        
+
         const selectedHairColor = document.querySelector('input[name="hair-color"]:checked').value;
         const selectedTops = document.querySelector('input[name="tops"]:checked').value;
         const selectedBottoms = document.querySelector('input[name="bottoms"]:checked').value;
         const selectedShoes = document.querySelector('input[name="shoes"]:checked').value;
         const selectedEarrings = document.querySelector('input[name="earrings"]:checked').value;
-        const selectedOtherFeatures = document.querySelector('input[name="otherFeatures"]:checked').value;
+        
+        // Handle multiple selections for otherFeatures
+    const selectedOtherFeaturesNodes = document.querySelectorAll('input[name="otherFeatures"]:checked');
+    let otherFeaturesImagePaths = [];
+    selectedOtherFeaturesNodes.forEach(node => {
+        const featureValue = node.value;
+        const imagePath = 'fullImages/otherFeatures/' + featureValue + '.png';
+        otherFeaturesImagePaths.push(imagePath);
+    });
 
+        // Get all the checkboxes for the other features
+        var checkboxes = document.querySelectorAll('input[name="otherFeatures"]:checked');
+
+        // Listen for changes on the checkboxes
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                updatePreview();
+            });
+        });
+        
         // Construct the path of the full-size image for each selected option
         const backgroundImagePath = 'fullImages/background/' + selectedBackground + '.png';
         const skinImagePath = 'fullImages/skin/' + selectedSkin + '.png';
         const eyesImagePath = 'fullImages/eyes/' + selectedEyes + '.png';
         const hairstyleImagePath = 'fullImages/hairstyle/' + selectedHairstyle + '/' + selectedHairColor + '.png';
-        const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
         const shoesImagePath = 'fullImages/shoes/' + selectedShoes + '.png';
         const bottomsImagePath = 'fullImages/bottoms/' + selectedBottoms + '.png';
         const topsImagePath = 'fullImages/tops/' + selectedTops + '.png';
         const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
+        const otherFeatures = Array.from(selectedOtherFeaturesNodes).map(node => node.value);
         const CameraImagePath = 'fullImages/camera.png';
 
         // Construct an array of image paths
@@ -68,13 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
             skinImagePath,
             eyesImagePath,
             hairstyleImagePath,
-            otherFeaturesImagePath,
+            ...otherFeaturesImagePaths,
             shoesImagePath,
             bottomsImagePath,
             topsImagePath,
             earringsImagePath,
             CameraImagePath
         ];
+ // Add the selected features to the character preview
+ otherFeatures.forEach(function(feature) {
+    var img = document.createElement('img');
+    img.src = 'thumbnails/otherFeatures/' + feature + '.png';
+    characterPreview.appendChild(img);
+});
+
         const hiddenContainer = document.getElementById('hidden-container');
 
         const imageLoadPromises = imagePaths.map(path => new Promise((resolve, reject) => {
@@ -88,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }));
 
         Promise.all(imageLoadPromises).then((paths) => {
-            const previewHTML = paths.map(path => `<img src="${path}" alt="Character Image">`).join('');
+            const previewHTML = paths.map(path => `<img src="${path}" alt="Character Image" style="position: absolute;">`).join('');
             characterPreview.innerHTML = previewHTML;
             hiddenContainer.innerHTML = ''; // Clear the hidden container
         }).catch(error => console.error("Failed to load images", error));

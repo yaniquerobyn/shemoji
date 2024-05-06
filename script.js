@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const shoesImagePath = 'fullImages/shoes/' + selectedShoes + '.png';
         const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
         const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
+        const CameraImagePath = 'fullImages/camera.png';
 
         // Construct the HTML for the stacked preview
         const previewHTML = `

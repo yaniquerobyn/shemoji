@@ -24,20 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updatePreview() {
+        
 
-        // Preload all images before updating the character preview
-        const preloadImages = [
-            'fullImages/background/',
-            'fullImages/skin/',
-            'fullImages/eyes/',
-            'fullImages/otherFeatures/',
-            'fullImages/shoes/',
-            'fullImages/bottoms/',
-            'fullImages/tops/',
-            'fullImages/earrings/',
-            'fullImages/hairstyle/',
-            'fullImages/camera.png' // Corrected here
-        ];
+    // Preload all images before updating the character preview
+    const preloadImages = [
+        'fullImages/background/',
+        'fullImages/skin/',
+        'fullImages/eyes/',
+        'fullImages/otherFeatures/',
+        'fullImages/shoes/',
+        'fullImages/bottoms/',
+        'fullImages/tops/',
+        'fullImages/earrings/',
+        'fullImages/hairstyle/',
+        'fullImages/camera.png' // Corrected here
+    ];
 
         // Get the selected options
         const selectedBackground = document.querySelector('input[name="background"]:checked').value;

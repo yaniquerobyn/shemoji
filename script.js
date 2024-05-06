@@ -22,9 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
     function updatePreview() {
-
+        // Disable UI elements
+        const radioInputs = document.querySelectorAll('input[type="radio"]');
+        radioInputs.forEach(input => {
+            input.disabled = true;
+        });
+    
         // Preload all images before updating the character preview
         const preloadImages = [
             'fullImages/background/',
@@ -38,67 +42,78 @@ document.addEventListener("DOMContentLoaded", function () {
             'fullImages/hairstyle/',
             'fullImages/camera.png' // Corrected here
         ];
-
-         // Load all images
-        preloadImages.forEach(imagePath => {
-            new Image().src = imagePath;
-        });
-
-        // Get the selected options
-        const selectedBackground = document.querySelector('input[name="background"]:checked').value;
-        const selectedSkin = document.querySelector('input[name="skin"]:checked').value;
-        const selectedEyes = document.querySelector('input[name="eyes"]:checked').value;
-        const selectedHairstyle = document.querySelector('input[name="hairstyle"]:checked').value;
-
-        // Hide all hair color options
-        const hairColorContainers = document.querySelectorAll('.color-options');
-        hairColorContainers.forEach(container => {
-            container.style.display = "none";
-        });
-
-        // Show hair color options for the selected hairstyle
-        const selectedHairColorContainer = document.getElementById(selectedHairstyle + "-color-options");
-        if (selectedHairColorContainer) {
-            selectedHairColorContainer.style.display = "block";
-        }
-
-        const selectedHairColor = document.querySelector('input[name="hair-color"]:checked').value;
-        const selectedTops = document.querySelector('input[name="tops"]:checked').value;
-        const selectedBottoms = document.querySelector('input[name="bottoms"]:checked').value;
-        const selectedShoes = document.querySelector('input[name="shoes"]:checked').value;
-        const selectedEarrings = document.querySelector('input[name="earrings"]:checked').value;
-        const selectedOtherFeatures = document.querySelector('input[name="otherFeatures"]:checked').value;
-
-        // Construct the path of the full-size image for each selected option
-        const backgroundImagePath = 'fullImages/background/' + selectedBackground + '.png';
-        const skinImagePath = 'fullImages/skin/' + selectedSkin + '.png';
-        const eyesImagePath = 'fullImages/eyes/' + selectedEyes + '.png';
-        const hairstyleImagePath = 'fullImages/hairstyle/' + selectedHairstyle + '/' + selectedHairColor + '.png';
-        const topsImagePath = 'fullImages/tops/' + selectedTops + '.png';
-        const bottomsImagePath = 'fullImages/bottoms/' + selectedBottoms + '.png';
-        const shoesImagePath = 'fullImages/shoes/' + selectedShoes + '.png';
-        const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
-        const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
-        const CameraImagePath = 'fullImages/camera.png';
-
-        // Construct the HTML for the stacked preview
-            const previewHTML = `
-            <img src="${backgroundImagePath}" alt="Background">
-            <img src="${skinImagePath}" alt="Skin Tone">
-            <img src="${eyesImagePath}" alt="Eye Color">
-            <img src="${otherFeaturesImagePath}" alt="Other Features">
-            <img src="${hairstyleImagePath}" alt="Hairstyle">
-            <img src="${CameraImagePath}" alt="Camera"> <!-- Corrected here -->
-            <img src="${shoesImagePath}" alt="Shoes">
-            <img src="${bottomsImagePath}" alt="Bottoms">
-            <img src="${topsImagePath}" alt="Tops">
-            <img src="${earringsImagePath}" alt="Earrings">
-        `;
     
-
-        // Update character preview with the stacked images
-        characterPreview.innerHTML = previewHTML;
-    }
+        // Load all images
+        const imagesLoadedPromises = preloadImages.map(imagePath => {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.onload = () => resolve();
+                img.src = imagePath;
+            });
+        });
+    
+        // Wait for all images to be loaded
+        Promise.all(imagesLoadedPromises).then(() => {
+            // Get the selected options
+            const selectedBackground = document.querySelector('input[name="background"]:checked').value;
+            const selectedSkin = document.querySelector('input[name="skin"]:checked').value;
+            const selectedEyes = document.querySelector('input[name="eyes"]:checked').value;
+            const selectedHairstyle = document.querySelector('input[name="hairstyle"]:checked').value;
+    
+            // Hide all hair color options
+            const hairColorContainers = document.querySelectorAll('.color-options');
+            hairColorContainers.forEach(container => {
+                container.style.display = "none";
+            });
+    
+            // Show hair color options for the selected hairstyle
+            const selectedHairColorContainer = document.getElementById(selectedHairstyle + "-color-options");
+            if (selectedHairColorContainer) {
+                selectedHairColorContainer.style.display = "block";
+            }
+    
+            const selectedHairColor = document.querySelector('input[name="hair-color"]:checked').value;
+            const selectedTops = document.querySelector('input[name="tops"]:checked').value;
+            const selectedBottoms = document.querySelector('input[name="bottoms"]:checked').value;
+            const selectedShoes = document.querySelector('input[name="shoes"]:checked').value;
+            const selectedEarrings = document.querySelector('input[name="earrings"]:checked').value;
+            const selectedOtherFeatures = document.querySelector('input[name="otherFeatures"]:checked').value;
+    
+            // Construct the path of the full-size image for each selected option
+            const backgroundImagePath = 'fullImages/background/' + selectedBackground + '.png';
+            const skinImagePath = 'fullImages/skin/' + selectedSkin + '.png';
+            const eyesImagePath = 'fullImages/eyes/' + selectedEyes + '.png';
+            const hairstyleImagePath = 'fullImages/hairstyle/' + selectedHairstyle + '/' + selectedHairColor + '.png';
+            const topsImagePath = 'fullImages/tops/' + selectedTops + '.png';
+            const bottomsImagePath = 'fullImages/bottoms/' + selectedBottoms + '.png';
+            const shoesImagePath = 'fullImages/shoes/' + selectedShoes + '.png';
+            const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
+            const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
+            const CameraImagePath = 'fullImages/camera.png';
+    
+            // Construct the HTML for the stacked preview
+            const previewHTML = `
+                <img src="${backgroundImagePath}" alt="Background">
+                <img src="${skinImagePath}" alt="Skin Tone">
+                <img src="${eyesImagePath}" alt="Eye Color">
+                <img src="${otherFeaturesImagePath}" alt="Other Features">
+                <img src="${hairstyleImagePath}" alt="Hairstyle">
+                <img src="${CameraImagePath}" alt="Camera"> <!-- Corrected here -->
+                <img src="${shoesImagePath}" alt="Shoes">
+                <img src="${bottomsImagePath}" alt="Bottoms">
+                <img src="${topsImagePath}" alt="Tops">
+                <img src="${earringsImagePath}" alt="Earrings">
+            `;
+    
+            // Update character preview with the stacked images
+            characterPreview.innerHTML = previewHTML;
+    
+            // Enable UI elements
+            radioInputs.forEach(input => {
+                input.disabled = false;
+            });
+        });
+    }    
 
     // Get all radio button options
     const backgroundOptions = document.querySelectorAll('input[name="background"]');

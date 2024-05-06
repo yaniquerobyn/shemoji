@@ -24,21 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updatePreview() {
-        
-
-    // Preload all images before updating the character preview
-    const preloadImages = [
-        'fullImages/background/',
-        'fullImages/skin/',
-        'fullImages/eyes/',
-        'fullImages/otherFeatures/',
-        'fullImages/shoes/',
-        'fullImages/bottoms/',
-        'fullImages/tops/',
-        'fullImages/earrings/',
-        'fullImages/hairstyle/',
-        'fullImages/camera.png' // Corrected here
-    ];
 
         // Get the selected options
         const selectedBackground = document.querySelector('input[name="background"]:checked').value;
@@ -77,8 +62,35 @@ document.addEventListener("DOMContentLoaded", function () {
         const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
         const CameraImagePath = 'fullImages/camera.png';
 
+        // Construct an array of image paths
+        const imagePaths = [
+            backgroundImagePath,
+            skinImagePath,
+            eyesImagePath,
+            hairstyleImagePath,
+            topsImagePath,
+            bottomsImagePath,
+            shoesImagePath,
+            earringsImagePath,
+            otherFeaturesImagePath,
+            CameraImagePath
+        ];
+
+        // Preload all images and update the character preview once all images are loaded
+        const imageLoadPromises = imagePaths.map(path => new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = reject;
+            img.src = path;
+        }));
+
+        Promise.all(imageLoadPromises).then(() => {
+            const previewHTML = imagePaths.map(path => `<img src="${path}" alt="Character Image">`).join('');
+            document.getElementById("character-preview").innerHTML = previewHTML;
+        }).catch(error => console.error("Failed to load images", error));
+
         // Construct the HTML for the stacked preview
-            const previewHTML = `
+        const previewHTML = `
             <img src="${backgroundImagePath}" alt="Background">
             <img src="${skinImagePath}" alt="Skin Tone">
             <img src="${eyesImagePath}" alt="Eye Color">
@@ -90,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${topsImagePath}" alt="Tops">
             <img src="${earringsImagePath}" alt="Earrings">
         `;
-    
 
         // Update character preview with the stacked images
         characterPreview.innerHTML = previewHTML;

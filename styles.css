@@ -144,13 +144,13 @@ main {
         top: 0;
         width: 90%;
         margin: 20px auto;
-        border: 1px solid red;
+       /* border: 1px solid red; */
     }
     #character-preview {
         width: 100%;
         height: 400px;
         margin-top: 20px;
-        border: 1px solid blue;
+       /* border: 1px solid blue; */
     }
     #submit-button {
         display: block;

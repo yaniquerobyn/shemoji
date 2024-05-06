@@ -24,6 +24,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updatePreview() {
+
+        // Preload all images before updating the character preview
+        const preloadImages = [
+            'fullImages/background/',
+            'fullImages/skin/',
+            'fullImages/eyes/',
+            'fullImages/otherFeatures/',
+            'fullImages/shoes/',
+            'fullImages/bottoms/',
+            'fullImages/tops/',
+            'fullImages/earrings/',
+            'fullImages/hairstyle/',
+            'fullImages/camera.png' // Corrected here
+        ];
+
+         // Load all images
+        preloadImages.forEach(imagePath => {
+            new Image().src = imagePath;
+        });
+
         // Get the selected options
         const selectedBackground = document.querySelector('input[name="background"]:checked').value;
         const selectedSkin = document.querySelector('input[name="skin"]:checked').value;

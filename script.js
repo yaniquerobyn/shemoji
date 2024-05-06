@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${eyesImagePath}" alt="Eye Color">
             <img src="${otherFeaturesImagePath}" alt="Other Features">
             <img src="${hairstyleImagePath}" alt="Hairstyle">
-            <img src="camera-image-container" alt="Camera Image">
+            <img src="fullImages/camera.png"
             <img src="${shoesImagePath}" alt="Shoes">
             <img src="${bottomsImagePath}" alt="Bottoms">
             <img src="${topsImagePath}" alt="Tops">

@@ -17,7 +17,7 @@ header {
     width: 100%;
 }
 
-.camera-image-container {
+/*.camera-image-container {
     position: sticky;
     top: 0;
     width: 80%;
@@ -26,7 +26,7 @@ header {
     padding-top: 20px;
     text-align: center;
     position: relative;
-}
+}*/
 
 .preview-container {
     position: sticky;

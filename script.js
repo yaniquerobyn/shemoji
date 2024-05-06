@@ -62,18 +62,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const CameraImagePath = 'fullImages/camera.png';
 
         // Construct the HTML for the stacked preview
-        const previewHTML = `
+            const previewHTML = `
             <img src="${backgroundImagePath}" alt="Background">
             <img src="${skinImagePath}" alt="Skin Tone">
             <img src="${eyesImagePath}" alt="Eye Color">
             <img src="${otherFeaturesImagePath}" alt="Other Features">
             <img src="${hairstyleImagePath}" alt="Hairstyle">
-            <img src="${CameraImagePath}" alt="Camera">/
+            <img src="${CameraImagePath}" alt="Camera"> <!-- Corrected here -->
             <img src="${shoesImagePath}" alt="Shoes">
             <img src="${bottomsImagePath}" alt="Bottoms">
             <img src="${topsImagePath}" alt="Tops">
             <img src="${earringsImagePath}" alt="Earrings">
         `;
+    
 
         // Update character preview with the stacked images
         characterPreview.innerHTML = previewHTML;

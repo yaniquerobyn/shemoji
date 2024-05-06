@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const skinImagePath = 'fullImages/skin/' + selectedSkin + '.png';
         const eyesImagePath = 'fullImages/eyes/' + selectedEyes + '.png';
         const hairstyleImagePath = 'fullImages/hairstyle/' + selectedHairstyle + '/' + selectedHairColor + '.png';
+        const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
         const shoesImagePath = 'fullImages/shoes/' + selectedShoes + '.png';
         const bottomsImagePath = 'fullImages/bottoms/' + selectedBottoms + '.png';
         const topsImagePath = 'fullImages/tops/' + selectedTops + '.png';
         const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
-        const otherFeaturesImagePath = 'fullImages/otherFeatures/' + selectedOtherFeatures + '.png';
         const CameraImagePath = 'fullImages/camera.png';
 
         // Construct an array of image paths
@@ -68,11 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
             skinImagePath,
             eyesImagePath,
             hairstyleImagePath,
+            otherFeaturesImagePath,
             shoesImagePath,
             bottomsImagePath,
             topsImagePath,
             earringsImagePath,
-            otherFeaturesImagePath,
             CameraImagePath
         ];
         const hiddenContainer = document.getElementById('hidden-container');

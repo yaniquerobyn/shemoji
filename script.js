@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${otherFeaturesImagePath}" alt="Other Features">
             <img src="${hairstyleImagePath}" alt="Hairstyle">
             <img src="${CameraImagePath}" alt="Camera"> <!-- Corrected here -->
-            <img src="${shoesImagePath}" alt="Shoes">
             <img src="${bottomsImagePath}" alt="Bottoms">
+            <img src="${shoesImagePath}" alt="Shoes">
             <img src="${topsImagePath}" alt="Tops">
             <img src="${earringsImagePath}" alt="Earrings">
         `;

@@ -17,31 +17,21 @@ header {
     width: 100%;
 }
 
-/*.camera-image-container {
-    position: sticky;
-    top: 0;
-    width: 80%;
-    max-width: 500px;
-    margin-top: 0;
-    padding-top: 20px;
-    text-align: center;
-    position: relative;
-}*/
-
 .preview-container {
     position: sticky;
     top: 0;
     width: 80%;
     max-width: 500px;
-    margin-top: 0;
+    margin-top: 20px; /* Adjusted top margin to provide space */
     padding-top: 20px;
     text-align: center;
     position: relative;
+    z-index: 1; /* Added z-index to ensure it stays on top of other content */
 }
 
 #character-preview {
-    width: 500px;
-    height: 600px;
+    width: 100%; /* Adjusted width to fill the container */
+    height: 600px; /* Adjusted height to maintain aspect ratio */
     margin-top: 20px;
     text-align: center;
     position: relative;
@@ -152,21 +142,20 @@ main {
     }
     .preview-container {
         position: sticky;
-        top: 20px; /* Adjusted the top value to give space */
-        width: 80%;
+        top: 0;
+        width: 90%;
         max-width: 500px;
-        margin-top: 0;
+        margin: 20px auto;
         padding-top: 20px;
         text-align: center;
         position: relative;
-       /* border: 1px solid red; */
+        z-index: 1; /* Added z-index to ensure it stays on top of other content */
     }
     
     #character-preview {
         width: 100%;
         height: 400px;
         margin-top: 20px;
-       /* border: 1px solid blue; */
     }
     #submit-button {
         display: block;

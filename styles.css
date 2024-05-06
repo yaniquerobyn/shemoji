@@ -1,11 +1,12 @@
+/* General CSS */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
     display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -19,10 +20,10 @@ header {
 .preview-container {
     position: sticky;
     top: 0;
-    width: 80%; /* Adjust width as needed */
-    max-width: 500px; /* Limit maximum width for larger screens */
-    margin-top: 0; /* Reduce or remove the margin at the top */
-    padding-top: 20px; /* Add padding at the top to create space */
+    width: 80%;
+    max-width: 500px;
+    margin-top: 0;
+    padding-top: 20px;
     text-align: center;
     position: relative;
 }
@@ -32,61 +33,56 @@ header {
     height: 600px;
     margin-top: 20px;
     text-align: center;
-    position: relative; /* Add position relative to create a stacking context */
+    position: relative;
 }
 
 #character-preview img {
-    position: absolute; /* Set position to absolute */
-    top: 50%; /* Align images vertically to the center */
-    left: 50%; /* Align images horizontally to the center */
-    transform: translate(-50%, -50%); /* Move images back by half of their width and height */
-    max-width: 100%; /* Ensure images don't exceed container width */
-    max-height: 100%; /* Ensure images don't exceed container height */
-    opacity: 1; /* Set initial opacity to create layer effect */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
 }
 
 #submit-button {
-    background-color: #4CAF50; /* Green background */
-    border: none; /* Remove border */
-    color: white; /* White text */
-    padding: 15px 32px; /* Padding */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Display as inline-block */
-    font-size: 16px; /* Font size */
-    margin: 4px 2px; /* Margin */
-    cursor: pointer; /* Pointer cursor */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #submit-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
 }
-
 
 main {
     display: flex;
-    justify-content: space-between; /* Align items with space between */
-    align-items: flex-start; /* Center items vertically */
+    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
     padding: 10px;
     margin-top: 10px;
 }
 
-/* Initially hide the content of collapsible sections */
 .collapsible-content {
     display: none;
 }
 .collapsible {
     cursor: pointer;
 }
-
 .collapsible + div {
     display: none;
 }
-
-/* Style for the collapsible headings */
 .collapsible {
     cursor: pointer;
     padding: 8px;
@@ -98,115 +94,83 @@ main {
     color: #fff;
     transition: background-color 0.3s ease;
 }
-
-/* Style for the active (open) collapsible headings */
 .active {
     background-color: #d55db1;
 }
-
-
-/* Hover effect for collapsible headings */
 .collapsible:hover {
     background-color: #d55db1;
 }
-
 .options-container {
-    width: 10%; /* Set width for the options container */
+    width: 10%;
 }
-
 .options {
-    width: 30%; /* Set width for the options section */
-    margin-right: 20px; /* Add some space between options and preview */
+    width: 30%;
+    margin-right: 20px;
 }
-
 .radio-buttons {
     display: flex;
     flex-wrap: wrap;
 }
-
 .radio-buttons input[type="radio"] {
     display: none;
 }
-
 .radio-buttons label {
     display: inline-block;
-    width: 12%; /* Set width to 45% for 2 buttons per row */
-    margin-right: 10px; /* Adjust margin between buttons */
+    width: 22%; /* Adjusted width to fit four buttons per row */
+    margin-right: 10px;
     margin-bottom: 5px;
     cursor: pointer;
 }
-
-.radio-buttons label:nth-child(2n) {
-    margin-right: 0; /* Remove margin for the last button in each row */
+.radio-buttons label:nth-child(4n) {
+    margin-right: 0;
 }
-
 .radio-buttons label img {
-    width: 100%; /* Make images fill the label container */
-    height: auto; /* Ensure proportional scaling */
+    width: 100%;
+    height: auto;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
 }
-
 .radio-buttons input[type="radio"]:checked + label img {
     border-color: #333;
 }
 
-/* CSS for mobile devices */
+/* Mobile-specific CSS */
 @media screen and (max-width: 600px) {
-
     body {
-        font-size: 11px; /* Reduce the font size for better readability */
+        font-size: 11px;
     }
-
     .preview-container {
-        position: sticky;
-        top: 0;
         width: 90%;
         margin: 20px auto;
-        border: 1px solid red; /* Add a red border for debugging */
+        border: 1px solid red;
     }
-
     #character-preview {
         width: 100%;
         height: 400px;
         margin-top: 20px;
-        border: 1px solid blue; /* Add a blue border for debugging */
+        border: 1px solid blue;
+    }
+    #submit-button {
+        display: block;
+        width: 80%;
+        margin: 20px auto;
+    }
+    .radio-buttons label {
+        width: 45%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+    }
+    .collapsible {
+        padding: 5px;
+        width: 80%;
+        margin-bottom: 5px;
+    }
+    .options-container {
+        width: 5%;
+        margin-bottom: 10px;
+    }
+    .options {
+        width: 40%;
+        margin-right: 0;
     }
 }
-
-#submit-button {
-    display: block; /* Display the submit button as a block element */
-    width: 80%; /* Set width to 80% */
-    margin: 20px auto; /* Center the button horizontally */
-}
-
-.radio-buttons label {
-    width: 45%; /* Increase width to fit two buttons per row */
-    margin-right: 5%; /* Adjust margin between buttons */
-    margin-bottom: 10px; /* Increase margin bottom for better spacing */
-}
-
-/* Style for the collapsible headings */
-.collapsible {
-    cursor: pointer;
-    padding: 5px; /* Increase padding for better touch interaction */
-    width: 80%; /* Set width to fit well on smaller screens */
-    border: none;
-    text-align: left;
-    outline: none;
-    background-color: #b83e99;
-    color: #fff;
-    transition: background-color 0.3s ease;
-    margin-bottom: 5px; /* Add some bottom margin for spacing */
-}
-
-.options-container {
-    width: 5%; /* Set width for the options container */
-    margin-bottom: 10px; /* Add bottom margin for spacing */
-}
-
-.options {
-    width: 40%; /* Adjust width to fit well on smaller screens */
-    margin-right: 0; /* Remove right margin */
-}
-

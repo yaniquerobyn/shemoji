@@ -1,801 +1,683 @@
 <!DOCTYPE html>
-       <html lang="en">
-       <head>
-           <meta charset="UTF-8">
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-           <title>Character Customizer</title>
-           <link rel="stylesheet" href="styles.css">
-           <script src="script.js" defer></script>
-       </head>
-       <body>
-           <!-- Loader -->
-   <div class="loader" id="loader"></div>
-
-
-       <!-- CHARACTER CUSTOMIZER -->
-       <header>
-           <h1>Character Customizer</h1>
-       </header>
-
-
-               <main>
-               <div class="options-container"></div>
-               <div class="options">
-               <!-- Background Options -->
-               <h2 class="collapsible">Background</h2>
-               <div class="radio-buttons" id="background-options">
-                   <input type="radio" id="blue" name="background" value="blue" checked>
-                   <label for="blue"><img src="thumbnails/background/blue.png" alt="Blue"></label>
-
-
-                   <input type="radio" id="pink" name="background" value="pink">
-                   <label for="pink"><img src="thumbnails/background/pink.png" alt="Pink"></label>
-
-
-                   <input type="radio" id="purple" name="background" value="purple">
-                   <label for="purple"><img src="thumbnails/background/purple.png" alt="Purple"></label>
-
-
-                   <input type="radio" id="green" name="background" value="green">
-                   <label for="green"><img src="thumbnails/background/green.png" alt="Green"></label>
-
-
-                   <input type="radio" id="beige" name="background" value="beige">
-                   <label for="beige"><img src="thumbnails/background/beige.png" alt="Beige"></label>
-
-
-                   <input type="radio" id="grey" name="background" value="grey">
-                   <label for="grey"><img src="thumbnails/background/grey.png" alt="Grey"></label>
-               </div>
-
-
-               <!-- Skin Tone Options -->
-               <h2 class="collapsible">Skin Tone</h2>
-               <div class="radio-buttons" id="skin-options">
-                   <input type="radio" id="fair" name="skin" value="fair" checked>
-                   <label for="fair"><img src="thumbnails/skin/fair.png" alt="Fair"></label>
-
-
-                   <input type="radio" id="tan" name="skin" value="tan">
-                   <label for="tan"><img src="thumbnails/skin/tan.png" alt="Tan"></label>
-
-
-                   <input type="radio" id="deep" name="skin" value="deep">
-                   <label for="deep"><img src="thumbnails/skin/deep.png" alt="Deep"></label>
-
-
-                   <input type="radio" id="deeper" name="skin" value="deeper">
-                   <label for="deeper"><img src="thumbnails/skin/deeper.png" alt="Deeper"></label>
-               </div>
-
-
-               <!-- Eye Color Options -->
-               <h2 class="collapsible">Eye Color</h2>
-               <div class="radio-buttons" id="eyes-options">
-                   <input type="radio" id="hazelEyes" name="eyes" value="hazelEyes" checked>
-                   <label for="hazelEyes"><img src="thumbnails/eyes/hazelEyes.png" alt="Hazel"></label>
-
-
-                   <input type="radio" id="blueEyes" name="eyes" value="blueEyes">
-                   <label for="blueEyes"><img src="thumbnails/eyes/blueEyes.png" alt="Blue"></label>
-
-
-                   <input type="radio" id="greenEyes" name="eyes" value="greenEyes">
-                   <label for="greenEyes"><img src="thumbnails/eyes/greenEyes.png" alt="Green"></label>
-
-
-                   <input type="radio" id="darkBrownEyes" name="eyes" value="darkBrownEyes">
-                   <label for="darkBrownEyes"><img src="thumbnails/eyes/darkBrownEyes.png" alt="Dark Brown"></label>
-               </div>
-
-
-               <!-- Hairstyle Options -->
-               <h2 class="collapsible">Hairstyle</h2>
-               <div class="radio-buttons" id="hairstyle-options">
-                   <!-- Messy Bun -->
-                   <input type="radio" id="messyBun" name="hairstyle" value="messyBun" checked>
-                   <label for="messyBun"><img src="thumbnails/hairstyle/messyBun.png" alt="Messy Bun"></label>
-
-
-                   <!-- Long Curly -->
-                   <input type="radio" id="longCurly" name="hairstyle" value="longCurly">
-                   <label for="longCurly"><img src="thumbnails/hairstyle/longCurly.png" alt="Long Curly"></label>
-
-
-                   <!-- Long Wavy -->
-                   <input type="radio" id="longWavy" name="hairstyle" value="longWavy">
-                   <label for="longWavy"><img src="thumbnails/hairstyle/longWavy.png" alt="Long Wavy"></label>
-
-
-                   <!-- Afro -->
-                   <input type="radio" id="afro" name="hairstyle" value="afro">
-                   <label for="afro"><img src="thumbnails/hairstyle/afro.png" alt="Afro"></label>
-
-
-                   <!-- Cornrows -->
-                   <input type="radio" id="cornrows" name="hairstyle" value="cornrows">
-                   <label for="cornrows"><img src="thumbnails/hairstyle/cornrows.png" alt="Cornrows"></label>
-
-
-                   <!-- Curly Ponytail -->
-                   <input type="radio" id="curlyPonytail" name="hairstyle" value="curlyPonytail">
-                   <label for="curlyPonytail"><img src="thumbnails/hairstyle/curlyPonytail.png" alt="Curly Ponytail"></label>
-
-
-                   <!-- Curly Space Buns -->
-                   <input type="radio" id="curlySpaceBuns" name="hairstyle" value="curlySpaceBuns">
-                   <label for="curlySpaceBuns"><img src="thumbnails/hairstyle/curlySpaceBuns.png" alt="Curly Space Buns"></label>
-
-
-                   <!-- High Puff -->
-                   <input type="radio" id="highPuff" name="hairstyle" value="highPuff">
-                   <label for="highPuff"><img src="thumbnails/hairstyle/highPuff.png" alt="High Puff"></label>
-
-
-                   <!-- Locs -->
-                   <input type="radio" id="locs" name="hairstyle" value="locs">
-                   <label for="locs"><img src="thumbnails/hairstyle/locs.png" alt="Locs"></label>
-
-
-                   <!-- Short Bob -->
-                   <input type="radio" id="shortBob" name="hairstyle" value="shortBob">
-                   <label for="shortBob"><img src="thumbnails/hairstyle/shortBob.png" alt="Short Bob"></label>
-
-
-                   <!-- Ponytail -->
-                   <input type="radio" id="ponytail" name="hairstyle" value="ponytail">
-                   <label for="ponytail"><img src="thumbnails/hairstyle/ponytail.png" alt="Ponytail"></label>
-
-
-                   <!-- Short Straight -->
-                   <input type="radio" id="shortStraight" name="hairstyle" value="shortStraight">
-                   <label for="shortStraight"><img src="thumbnails/hairstyle/shortStraight.png" alt="Short Straight"></label>
-
-
-                   <!-- Wavy -->
-                   <input type="radio" id="wavy" name="hairstyle" value="wavy">
-                   <label for="wavy"><img src="thumbnails/hairstyle/wavy.png" alt="Wavy"></label>
-               </div>
-          
-               <!-- Hair Color Options -->
-               <h2 class="collapsible">Hair Color</h2>
-               <div class="radio-buttons hair-color-options">
-
-
-                   <!-- Hair color options for Messy Bun -->
-                   <div id="messyBun-color-options" class="color-options">
-                           <input type="radio" id="messyBun-black" name="hair-color" value="black" checked>
-                           <label for="messyBun-black"><img src="thumbnails/hairstyle/messyBun/black.png" alt="Black"></label>
-                           <input type="radio" id="messyBun-blonde" name="hair-color" value="blonde">
-                           <label for="messyBun-blonde"><img src="thumbnails/hairstyle/messyBun/blonde.png" alt="Blonde"></label>
-                           <input type="radio" id="messyBun-darkBrown" name="hair-color" value="darkBrown">
-                           <label for="messyBun-darkBrown"><img src="thumbnails/hairstyle/messyBun/darkBrown.png" alt="Dark Brown"></label>
-                           <input type="radio" id="messyBun-lightBrown" name="hair-color" value="lightBrown">
-                           <label for="messyBun-lightBrown"><img src="thumbnails/hairstyle/messyBun/lightBrown.png" alt="Light Brown"></label>
-                           <input type="radio" id="messyBun-ginger" name="hair-color" value="ginger">
-                           <label for="messyBun-ginger"><img src="thumbnails/hairstyle/messyBun/ginger.png" alt="Ginger"></label>
-                           <input type="radio" id="messyBun-red" name="hair-color" value="red">
-                           <label for="messyBun-red"><img src="thumbnails/hairstyle/messyBun/red.png" alt="Red"></label>
-                           <input type="radio" id="messyBun-blue" name="hair-color" value="blue">
-                           <label for="messyBun-blue"><img src="thumbnails/hairstyle/messyBun/blue.png" alt="Blue"></label>
-                           <input type="radio" id="messyBun-green" name="hair-color" value="green">
-                           <label for="messyBun-green"><img src="thumbnails/hairstyle/messyBun/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Long Curly -->
-                   <div id="longCurly-color-options" class="color-options">
-                       <input type="radio" id="longCurly-black" name="hair-color" value="black" checked>
-                       <label for="longCurly-black"><img src="thumbnails/hairstyle/longCurly/black.png" alt="Black"></label>
-                       <input type="radio" id="longCurly-blonde" name="hair-color" value="blonde">
-                       <label for="longCurly-blonde"><img src="thumbnails/hairstyle/longCurly/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="longCurly-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="longCurly-darkBrown"><img src="thumbnails/hairstyle/longCurly/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="longCurly-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="longCurly-lightBrown"><img src="thumbnails/hairstyle/longCurly/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="longCurly-ginger" name="hair-color" value="ginger">
-                       <label for="longCurly-ginger"><img src="thumbnails/hairstyle/longCurly/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="longCurly-red" name="hair-color" value="red">
-                       <label for="longCurly-red"><img src="thumbnails/hairstyle/longCurly/red.png" alt="Red"></label>
-                       <input type="radio" id="longCurly-blue" name="hair-color" value="blue">
-                       <label for="longCurly-blue"><img src="thumbnails/hairstyle/longCurly/blue.png" alt="Blue"></label>
-                       <input type="radio" id="longCurly-green" name="hair-color" value="green">
-                       <label for="longCurly-green"><img src="thumbnails/hairstyle/longCurly/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Long Wavy -->
-                   <div id="longWavy-color-options" class="color-options">
-                       <input type="radio" id="longWavy-black" name="hair-color" value="black" checked>
-                       <label for="longWavy-black"><img src="thumbnails/hairstyle/longWavy/black.png" alt="Black"></label>
-                       <input type="radio" id="longWavy-blonde" name="hair-color" value="blonde">
-                       <label for="longWavy-blonde"><img src="thumbnails/hairstyle/longWavy/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="longWavy-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="longWavy-darkBrown"><img src="thumbnails/hairstyle/longWavy/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="longWavy-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="longWavy-lightBrown"><img src="thumbnails/hairstyle/longWavy/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="longWavy-ginger" name="hair-color" value="ginger">
-                       <label for="longWavy-ginger"><img src="thumbnails/hairstyle/longWavy/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="longWavy-red" name="hair-color" value="red">
-                       <label for="longWavy-red"><img src="thumbnails/hairstyle/longWavy/red.png" alt="Red"></label>
-                       <input type="radio" id="longWavy-blue" name="hair-color" value="blue">
-                       <label for="longWavy-blue"><img src="thumbnails/hairstyle/longWavy/blue.png" alt="Blue"></label>
-                       <input type="radio" id="longWavy-green" name="hair-color" value="green">
-                       <label for="longWavy-green"><img src="thumbnails/hairstyle/longWavy/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Afro -->
-                   <div id="afro-color-options" class="color-options">
-                       <input type="radio" id="afro-black" name="hair-color" value="black" checked>
-                       <label for="afro-black"><img src="thumbnails/hairstyle/afro/black.png" alt="Black"></label>
-                       <input type="radio" id="afro-blonde" name="hair-color" value="blonde">
-                       <label for="afro-blonde"><img src="thumbnails/hairstyle/afro/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="afro-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="afro-darkBrown"><img src="thumbnails/hairstyle/afro/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="afro-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="afro-lightBrown"><img src="thumbnails/hairstyle/afro/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="afro-ginger" name="hair-color" value="ginger">
-                       <label for="afro-ginger"><img src="thumbnails/hairstyle/afro/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="afro-red" name="hair-color" value="red">
-                       <label for="afro-red"><img src="thumbnails/hairstyle/afro/red.png" alt="Red"></label>
-                       <input type="radio" id="afro-blue" name="hair-color" value="blue">
-                       <label for="afro-blue"><img src="thumbnails/hairstyle/afro/blue.png" alt="Blue"></label>
-                       <input type="radio" id="afro-green" name="hair-color" value="green">
-                       <label for="afro-green"><img src="thumbnails/hairstyle/afro/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Cornrows -->
-                   <div id="cornrows-color-options" class="color-options">
-                       <input type="radio" id="cornrows-black" name="hair-color" value="black" checked>
-                       <label for="cornrows-black"><img src="thumbnails/hairstyle/cornrows/black.png" alt="Black"></label>
-                       <input type="radio" id="cornrows-blonde" name="hair-color" value="blonde">
-                       <label for="cornrows-blonde"><img src="thumbnails/hairstyle/cornrows/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="cornrows-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="cornrows-darkBrown"><img src="thumbnails/hairstyle/cornrows/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="cornrows-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="cornrows-lightBrown"><img src="thumbnails/hairstyle/cornrows/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="cornrows-ginger" name="hair-color" value="ginger">
-                       <label for="cornrows-ginger"><img src="thumbnails/hairstyle/cornrows/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="cornrows-red" name="hair-color" value="red">
-                       <label for="cornrows-red"><img src="thumbnails/hairstyle/cornrows/red.png" alt="Red"></label>
-                       <input type="radio" id="cornrows-blue" name="hair-color" value="blue">
-                       <label for="cornrows-blue"><img src="thumbnails/hairstyle/cornrows/blue.png" alt="Blue"></label>
-                       <input type="radio" id="cornrows-green" name="hair-color" value="green">
-                       <label for="cornrows-green"><img src="thumbnails/hairstyle/cornrows/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Long Straight -->
-                   <div id="longStraight-color-options" class="color-options">
-                       <input type="radio" id="longStraight-black" name="hair-color" value="black" checked>
-                       <label for="longStraight-black"><img src="thumbnails/hairstyle/longStraight/black.png" alt="Black"></label>
-                       <input type="radio" id="longStraight-blonde" name="hair-color" value="blonde">
-                       <label for="longStraight-blonde"><img src="thumbnails/hairstyle/longStraight/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="longStraight-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="longStraight-darkBrown"><img src="thumbnails/hairstyle/longStraight/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="longStraight-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="longStraight-lightBrown"><img src="thumbnails/hairstyle/longStraight/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="longStraight-ginger" name="hair-color" value="ginger">
-                       <label for="longStraight-ginger"><img src="thumbnails/hairstyle/longStraight/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="longStraight-red" name="hair-color" value="red">
-                       <label for="longStraight-red"><img src="thumbnails/hairstyle/longStraight/red.png" alt="Red"></label>
-                       <input type="radio" id="longStraight-blue" name="hair-color" value="blue">
-                       <label for="longStraight-blue"><img src="thumbnails/hairstyle/longStraight/blue.png" alt="Blue"></label>
-                       <input type="radio" id="longStraight-green" name="hair-color" value="green">
-                       <label for="longStraight-green"><img src="thumbnails/hairstyle/longStraight/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Curly Ponytail -->
-                   <div id="curlyPonytail-color-options" class="color-options">
-                       <input type="radio" id="curlyPonytail-black" name="hair-color" value="black" checked>
-                       <label for="curlyPonytail-black"><img src="thumbnails/hairstyle/curlyPonytail/black.png" alt="Black"></label>
-                       <input type="radio" id="curlyPonytail-blonde" name="hair-color" value="blonde">
-                       <label for="curlyPonytail-blonde"><img src="thumbnails/hairstyle/curlyPonytail/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="curlyPonytail-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="curlyPonytail-darkBrown"><img src="thumbnails/hairstyle/curlyPonytail/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="curlyPonytail-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="curlyPonytail-lightBrown"><img src="thumbnails/hairstyle/curlyPonytail/lightBrown.png" alt="Light Background"></label>
-                       <input type="radio" id="curlyPonytail-ginger" name="hair-color" value="ginger">
-                       <label for="curlyPonytail-ginger"><img src="thumbnails/hairstyle/curlyPonytail/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="curlyPonytail-red" name="hair-color" value="red">
-                       <label for="curlyPonytail-red"><img src="thumbnails/hairstyle/curlyPonytail/red.png" alt="Red"></label>
-                       <input type="radio" id="curlyPonytail-blue" name="hair-color" value="blue">
-                       <label for="curlyPonytail-blue"><img src="thumbnails/hairstyle/curlyPonytail/blue.png" alt="Blue"></label>
-                       <input type="radio" id="curlyPonytail-green" name="hair-color" value="green">
-                       <label for="curlyPonytail-green"><img src="thumbnails/hairstyle/curlyPonytail/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Curly Space Buns -->
-                   <div id="curlySpaceBuns-color-options" class="color-options">
-                       <input type="radio" id="curlySpaceBuns-black" name="hair-color" value="black" checked>
-                       <label for="curlySpaceBuns-black"><img src="thumbnails/hairstyle/curlySpaceBuns/black.png" alt="Black"></label>
-                       <input type="radio" id="curlySpaceBuns-blonde" name="hair-color" value="blonde">
-                       <label for="curlySpaceBuns-blonde"><img src="thumbnails/hairstyle/curlySpaceBuns/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="curlySpaceBuns-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="curlySpaceBuns-darkBrown"><img src="thumbnails/hairstyle/curlySpaceBuns/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="curlySpaceBuns-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="curlySpaceBuns-lightBrown"><img src="thumbnails/hairstyle/curlySpaceBuns/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="curlySpaceBuns-ginger" name="hair-color" value="ginger">
-                       <label for="curlySpaceBuns-ginger"><img src="thumbnails/hairstyle/curlySpaceBuns/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="curlySpaceBuns-red" name="hair-color" value="red">
-                       <label for="curlySpaceBuns-red"><img src="thumbnails/hairstyle/curlySpaceBuns/red.png" alt="Red"></label>
-                       <input type="radio" id="curlySpaceBuns-blue" name="hair-color" value="blue">
-                       <label for="curlySpaceBuns-blue"><img src="thumbnails/hairstyle/curlySpaceBuns/blue.png" alt="Blue"></label>
-                       <input type="radio" id="curlySpaceBuns-green" name="hair-color" value="green">
-                       <label for="curlySpaceBuns-green"><img src="thumbnails/hairstyle/curlySpaceBuns/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for High Puff -->
-                   <div id="highPuff-color-options" class="color-options">
-                       <input type="radio" id="highPuff-black" name="hair-color" value="black" checked>
-                       <label for="highPuff-black"><img src="thumbnails/hairstyle/highPuff/black.png" alt="Black"></label>
-                       <input type="radio" id="highPuff-blonde" name="hair-color" value="blonde">
-                       <label for="highPuff-blonde"><img src="thumbnails/hairstyle/highPuff/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="highPuff-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="highPuff-darkBrown"><img src="thumbnails/hairstyle/highPuff/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="highPuff-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="highPuff-lightBrown"><img src="thumbnails/hairstyle/highPuff/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="highPuff-ginger" name="hair-color" value="ginger">
-                       <label for="highPuff-ginger"><img src="thumbnails/hairstyle/highPuff/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="highPuff-red" name="hair-color" value="red">
-                       <label for="highPuff-red"><img src="thumbnails/hairstyle/highPuff/red.png" alt="Red"></label>
-                       <input type="radio" id="highPuff-blue" name="hair-color" value="blue">
-                       <label for="highPuff-blue"><img src="thumbnails/hairstyle/highPuff/blue.png" alt="Blue"></label>
-                       <input type="radio" id="highPuff-green" name="hair-color" value="green">
-                       <label for="highPuff-green"><img src="thumbnails/hairstyle/highPuff/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Locs -->
-                   <div id="locs-color-options" class="color-options">
-                       <input type="radio" id="locs-black" name="hair-color" value="black" checked>
-                       <label for="locs-black"><img src="thumbnails/hairstyle/locs/black.png" alt="Black"></label>
-                       <input type="radio" id="locs-blonde" name="hair-color" value="blonde">
-                       <label for="locs-blonde"><img src="thumbnails/hairstyle/locs/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="locs-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="locs-darkBrown"><img src="thumbnails/hairstyle/locs/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="locs-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="locs-lightBrown"><img src="thumbnails/hairstyle/locs/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="locs-ginger" name="hair-color" value="ginger">
-                       <label for="locs-ginger"><img src="thumbnails/hairstyle/locs/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="locs-red" name="hair-color" value="red">
-                       <label for="locs-red"><img src="thumbnails/hairstyle/locs/red.png" alt="Red"></label>
-                       <input type="radio" id="locs-blue" name="hair-color" value="blue">
-                       <label for="locs-blue"><img src="thumbnails/hairstyle/locs/blue.png" alt="Blue"></label>
-                       <input type="radio" id="locs-green" name="hair-color" value="green">
-                       <label for="locs-green"><img src="thumbnails/hairstyle/locs/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Short Bob -->
-                   <div id="shortBob-color-options" class="color-options">
-                       <input type="radio" id="shortBob-black" name="hair-color" value="black" checked>
-                       <label for="shortBob-black"><img src="thumbnails/hairstyle/shortBob/black.png" alt="Black"></label>
-                       <input type="radio" id="shortBob-blonde" name="hair-color" value="blonde">
-                       <label for="shortBob-blonde"><img src="thumbnails/hairstyle/shortBob/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="shortBob-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="shortBob-darkBrown"><img src="thumbnails/hairstyle/shortBob/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="shortBob-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="shortBob-lightBrown"><img src="thumbnails/hairstyle/shortBob/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="shortBob-ginger" name="hair-color" value="ginger">
-                       <label for="shortBob-ginger"><img src="thumbnails/hairstyle/shortBob/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="shortBob-red" name="hair-color" value="red">
-                       <label for="shortBob-red"><img src="thumbnails/hairstyle/shortBob/red.png" alt="Red"></label>
-                       <input type="radio" id="shortBob-blue" name="hair-color" value="blue">
-                       <label for="shortBob-blue"><img src="thumbnails/hairstyle/shortBob/blue.png" alt="Blue"></label>
-                       <input type="radio" id="shortBob-green" name="hair-color" value="green">
-                       <label for="shortBob-green"><img src="thumbnails/hairstyle/shortBob/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Ponytail -->
-                   <div id="ponytail-color-options" class="color-options">
-                       <input type="radio" id="ponytail-black" name="hair-color" value="black" checked>
-                       <label for="ponytail-black"><img src="thumbnails/hairstyle/ponytail/black.png" alt="Black"></label>
-                       <input type="radio" id="ponytail-blonde" name="hair-color" value="blonde">
-                       <label for="ponytail-blonde"><img src="thumbnails/hairstyle/ponytail/blonde.png" alt="Blonde"></label>
-                       <input type="radio" id="ponytail-darkBrown" name="hair-color" value="darkBrown">
-                       <label for="ponytail-darkBrown"><img src="thumbnails/hairstyle/ponytail/darkBrown.png" alt="Dark Brown"></label>
-                       <input type="radio" id="ponytail-lightBrown" name="hair-color" value="lightBrown">
-                       <label for="ponytail-lightBrown"><img src="thumbnails/hairstyle/ponytail/lightBrown.png" alt="Light Brown"></label>
-                       <input type="radio" id="ponytail-ginger" name="hair-color" value="ginger">
-                       <label for="ponytail-ginger"><img src="thumbnails/hairstyle/ponytail/ginger.png" alt="Ginger"></label>
-                       <input type="radio" id="ponytail-red" name="hair-color" value="red">
-                       <label for="ponytail-red"><img src="thumbnails/hairstyle/ponytail/red.png" alt="Red"></label>
-                       <input type="radio" id="ponytail-blue" name="hair-color" value="blue">
-                       <label for="ponytail-blue"><img src="thumbnails/hairstyle/ponytail/blue.png" alt="Blue"></label>
-                       <input type="radio" id="ponytail-green" name="hair-color" value="green">
-                       <label for="ponytail-green"><img src="thumbnails/hairstyle/ponytail/green.png" alt="Green"></label>
-                   </div>
-
-
-                   <!-- Hair color options for Short Straight -->
-                   <div id="shortStraight-color-options" class="color-options">
-                   <input type="radio" id="shortStraight-black" name="hair-color" value="black" checked>
-                   <label for="shortStraight-black"><img src="thumbnails/hairstyle/shortStraight/black.png" alt="Black"></label>
-                   <input type="radio" id="shortStraight-blonde" name="hair-color" value="blonde">
-                   <label for="shortStraight-blonde"><img src="thumbnails/hairstyle/shortStraight/blonde.png" alt="Blonde"></label>
-                   <input type="radio" id="shortStraight-darkBrown" name="hair-color" value="darkBrown">
-                   <label for="shortStraight-darkBrown"><img src="thumbnails/hairstyle/shortStraight/darkBrown.png" alt="Dark Brown"></label>
-                   <input type="radio" id="shortStraight-lightBrown" name="hair-color" value="lightBrown">
-                   <label for="shortStraight-lightBrown"><img src="thumbnails/hairstyle/shortStraight/lightBrown.png" alt="Light Brown"></label>
-                   <input type="radio" id="shortStraight-ginger" name="hair-color" value="ginger">
-                   <label for="shortStraight-ginger"><img src="thumbnails/hairstyle/shortStraight/ginger.png" alt="Ginger"></label>
-                   <input type="radio" id="shortStraight-red" name="hair-color" value="red">
-                   <label for="shortStraight-red"><img src="thumbnails/hairstyle/shortStraight/red.png" alt="Red"></label>
-                   <input type="radio" id="shortStraight-blue" name="hair-color" value="blue">
-                   <label for="shortStraight-blue"><img src="thumbnails/hairstyle/shortStraight/blue.png" alt="Blue"></label>
-                   <input type="radio" id="shortStraight-green" name="hair-color" value="green">
-                   <label for="shortStraight-green"><img src="thumbnails/hairstyle/shortStraight/green.png" alt="Green"></label>
-               </div>
-
-
-               <!-- Hair color options for Wavy -->
-               <div id="wavy-color-options" class="color-options">
-                   <input type="radio" id="wavy-black" name="hair-color" value="black" checked>
-                   <label for="wavy-black"><img src="thumbnails/hairstyle/wavy/black.png" alt="Black"></label>
-                   <input type="radio" id="wavy-blonde" name="hair-color" value="blonde">
-                   <label for="wavy-blonde"><img src="thumbnails/hairstyle/wavy/blonde.png" alt="Blonde"></label>
-                   <input type="radio" id="wavy-darkBrown" name="hair-color" value="darkBrown">
-                   <label for="wavy-darkBrown"><img src="thumbnails/hairstyle/wavy/darkBrown.png" alt="Dark Brown"></label>
-                   <input type="radio" id="wavy-lightBrown" name="hair-color" value="lightBrown">
-                   <label for="wavy-lightBrown"><img src="thumbnails/hairstyle/wavy/lightBrown.png" alt="Light Brown"></label>
-                   <input type="radio" id="wavy-ginger" name="hair-color" value="ginger">
-                   <label for="wavy-ginger"><img src="thumbnails/hairstyle/wavy/ginger.png" alt="Ginger"></label>
-                   <input type="radio" id="wavy-red" name="hair-color" value="red">
-                   <label for="wavy-red"><img src="thumbnails/hairstyle/wavy/red.png" alt="Red"></label>
-                   <input type="radio" id="wavy-blue" name="hair-color" value="blue">
-                   <label for="wavy-blue"><img src="thumbnails/hairstyle/wavy/blue.png" alt="Blue"></label>
-                   <input type="radio" id="wavy-green" name="hair-color" value="green">
-                   <label for="wavy-green"><img src="thumbnails/hairstyle/wavy/green.png" alt="Green"></label>
-               </div>
-               </div>
-
-
-
-
-               <!-- Tops Options -->
-               <h2 class="collapsible">Tops</h2>
-               <div class="radio-buttons" id="tops-options">
-                   <input type="radio" id="bra" name="tops" value="bra" checked>
-                   <label for="bra"><img src="thumbnails/tops/bra.png" alt="Bra"></label>
-
-
-                   <input type="radio" id="bandeau" name="tops" value="bandeau">
-                   <label for="bandeau"><img src="thumbnails/tops/bandeau.png" alt="Bandeau"></label>
-
-
-                   <input type="radio" id="corset" name="tops" value="corset">
-                   <label for="corset"><img src="thumbnails/tops/corset.png" alt="Corset"></label>
-
-
-                   <input type="radio" id="cropCardigan" name="tops" value="cropCardigan">
-                   <label for="cropCardigan"><img src="thumbnails/tops/cropCardigan.png" alt="Crop Cardigan"></label>
-
-
-                   <input type="radio" id="cropJumper" name="tops" value="cropJumper">
-                   <label for="cropJumper"><img src="thumbnails/tops/cropJumper.png" alt="Crop Jumper"></label>
-
-
-                   <input type="radio" id="croppedPuffer" name="tops" value="croppedPuffer">
-                   <label for="croppedPuffer"><img src="thumbnails/tops/croppedPuffer.png" alt="Cropped Puffer"></label>
-
-
-                   <input type="radio" id="floralTop" name="tops" value="floralTop">
-                   <label for="floralTop"><img src="thumbnails/tops/floralTop.png" alt="Floral Top"></label>
-
-
-                   <input type="radio" id="frillSleeve" name="tops" value="frillSleeve">
-                   <label for="frillSleeve"><img src="thumbnails/tops/frillSleeve.png" alt="Frill Sleeve"></label>
-
-
-                   <input type="radio" id="graphicTee" name="tops" value="graphicTee">
-                   <label for="graphicTee"><img src="thumbnails/tops/graphicTee.png" alt="Graphic Tee"></label>
-
-
-                   <input type="radio" id="renaissanceTop" name="tops" value="renaissanceTop">
-                   <label for="renaissanceTop"><img src="thumbnails/tops/renaissanceTop.png" alt="Renaissance Top"></label>
-
-
-                   <input type="radio" id="blackWrapCrop" name="tops" value="blackWrapCrop">
-                   <label for="blackWrapCrop"><img src="thumbnails/tops/blackWrapCrop.png" alt="Black Wrap Crop"></label>
-
-
-                   <input type="radio" id="pinkWrapCrop" name="tops" value="pinkWrapCrop">
-                   <label for="pinkWrapCrop"><img src="thumbnails/tops/pinkWrapCrop.png" alt="Pink Wrap Crop"></label>
-
-
-                   <input type="radio" id="yellowWrapCrop" name="tops" value="yellowWrapCrop">
-                   <label for="yellowWrapCrop"><img src="thumbnails/tops/yellowWrapCrop.png" alt="Yellow Wrap Crop"></label>
-
-
-                   <input type="radio" id="whiteTank" name="tops" value="whiteTank">
-                   <label for="whiteTank"><img src="thumbnails/tops/whiteTank.png" alt="White Tank"></label>
-
-
-                   <input type="radio" id="greyTank" name="tops" value="greyTank">
-                   <label for="greyTank"><img src="thumbnails/tops/greyTank.png" alt="Grey Tank"></label>
-
-
-                   <input type="radio" id="blueTank" name="tops" value="blueTank">
-                   <label for="blueTank"><img src="thumbnails/tops/blueTank.png" alt="Blue Tank"></label>
-
-
-                   <input type="radio" id="blackCroppedHoodie" name="tops" value="blackCroppedHoodie">
-                   <label for="blackCroppedHoodie"><img src="thumbnails/tops/blackCroppedHoodie.png" alt="Black Cropped Hoodie"></label>
-
-
-                   <input type="radio" id="greyCroppedHoodie" name="tops" value="greyCroppedHoodie">
-                   <label for="greyCroppedHoodie"><img src="thumbnails/tops/greyCroppedHoodie.png" alt="Grey Cropped Hoodie"></label>
-
-
-                   <input type="radio" id="pinkCroppedHoodie" name="tops" value="pinkCroppedHoodie">
-                   <label for="pinkCroppedHoodie"><img src="thumbnails/tops/pinkCroppedHoodie.png" alt="Pink Cropped Hoodie"></label>
-
-
-                   <input type="radio" id="blackHoodie" name="tops" value="blackHoodie">
-                   <label for="blackHoodie"><img src="thumbnails/tops/blackHoodie.png" alt="Black Hoodie"></label>
-
-
-                   <input type="radio" id="greyHoodie" name="tops" value="greyHoodie">
-                   <label for="greyHoodie"><img src="thumbnails/tops/greyHoodie.png" alt="Grey Hoodie"></label>
-
-
-                   <input type="radio" id="pinkHoodie" name="tops" value="pinkHoodie">
-                   <label for="pinkHoodie"><img src="thumbnails/tops/pinkHoodie.png" alt="Pink Hoodie"></label>
-               </div>
-          
-               <!-- Bottoms Options -->
-               <h2 class="collapsible">Bottoms</h2>
-               <div class="radio-buttons" id="bottoms-options">
-                   <input type="radio" id="knickers" name="bottoms" value="knickers" checked>
-                   <label for="knickers"><img src="thumbnails/bottoms/knickers.png" alt="Knickers"></label>
-
-
-                   <input type="radio" id="blackWrapSkirt" name="bottoms" value="blackWrapSkirt">
-                   <label for="blackWrapSkirt"><img src="thumbnails/bottoms/blackWrapSkirt.png" alt="Black Wrap Skirt"></label>
-
-
-                   <input type="radio" id="brownPants" name="bottoms" value="brownPants">
-                   <label for="brownPants"><img src="thumbnails/bottoms/brownPants.png" alt="Brown Pants"></label>
-
-
-                   <input type="radio" id="denimSkirt" name="bottoms" value="denimSkirt">
-                   <label for="denimSkirt"><img src="thumbnails/bottoms/denimSkirt.png" alt="Denim Skirt"></label>
-
-
-                   <input type="radio" id="flairJeans" name="bottoms" value="flairJeans">
-                   <label for="flairJeans"><img src="thumbnails/bottoms/flairJeans.png" alt="Flair Jeans"></label>
-
-
-                   <input type="radio" id="pleatedSkirt" name="bottoms" value="pleatedSkirt">
-                   <label for="pleatedSkirt"><img src="thumbnails/bottoms/pleatedSkirt.png" alt="Pleated Skirt"></label>
-
-
-                   <input type="radio" id="starJeans" name="bottoms" value="starJeans">
-                   <label for="starJeans"><img src="thumbnails/bottoms/starJeans.png" alt="Star Jeans"></label>
-
-
-                   <input type="radio" id="blackMomJeans" name="bottoms" value="blackMomJeans">
-                   <label for="blackMomJeans"><img src="thumbnails/bottoms/blackMomJeans.png" alt="Black Mom Jeans"></label>
-
-
-                   <input type="radio" id="blueMomJeans" name="bottoms" value="blueMomJeans">
-                   <label for="blueMomJeans"><img src="thumbnails/bottoms/blueMomJeans.png" alt="Blue Mom Jeans"></label>
-
-
-                   <input type="radio" id="greyMomJeans" name="bottoms" value="greyMomJeans">
-                   <label for="greyMomJeans"><img src="thumbnails/bottoms/greyMomJeans.png" alt="Grey Mom Jeans"></label>
-
-
-                   <input type="radio" id="khakiCargos" name="bottoms" value="khakiCargos">
-                   <label for="khakiCargos"><img src="thumbnails/bottoms/khakiCargos.png" alt="Khaki Cargos"></label>
-
-
-                   <input type="radio" id="greyCargos" name="bottoms" value="greyCargos">
-                   <label for="greyCargos"><img src="thumbnails/bottoms/greyCargos.png" alt="Grey Cargos"></label>
-
-
-                   <input type="radio" id="blackJoggers" name="bottoms" value="blackJoggers">
-                   <label for="blackJoggers"><img src="thumbnails/bottoms/blackJoggers.png" alt="Black Joggers"></label>
-
-
-                   <input type="radio" id="pinkJoggers" name="bottoms" value="pinkJoggers">
-                   <label for="pinkJoggers"><img src="thumbnails/bottoms/pinkJoggers.png" alt="Pink Joggers"></label>
-
-
-                   <input type="radio" id="greyJoggers" name="bottoms" value="greyJoggers">
-                   <label for="greyJoggers"><img src="thumbnails/bottoms/greyJoggers.png" alt="Grey Joggers"></label>
-
-
-                   <input type="radio" id="blackLeggings" name="bottoms" value="blackLeggings">
-                   <label for="blackLeggings"><img src="thumbnails/bottoms/blackLeggings.png" alt="Black Leggings"></label>
-
-
-                   <input type="radio" id="nudeLeggings" name="bottoms" value="nudeLeggings">
-                   <label for="nudeLeggings"><img src="thumbnails/bottoms/nudeLeggings.png" alt="Nude Leggings"></label>
-
-
-                   <input type="radio" id="blackShorts" name="bottoms" value="blackShorts">
-                   <label for="blackShorts"><img src="thumbnails/bottoms/blackShorts.png" alt="Black Shorts"></label>
-
-
-                   <input type="radio" id="greyShorts" name="bottoms" value="greyShorts">
-                   <label for="greyShorts"><img src="thumbnails/bottoms/greyShorts.png" alt="Grey Shorts"></label>
-
-
-                   <input type="radio" id="burgandyShorts" name="bottoms" value="burgandyShorts">
-                   <label for="burgandyShorts"><img src="thumbnails/bottoms/burgandyShorts.png" alt="Burgandy Shorts"></label>
-               </div>
-
-
-               <!-- Shoes Options -->
-               <h2 class="collapsible">Shoes</h2>
-               <div class="radio-buttons" id="shoes-options">
-                   <input type="radio" id="greySlides" name="shoes" value="greySlides" checked>
-                   <label for="greySlides"><img src="thumbnails/shoes/greySlides.png" alt="Grey Slides"></label>
-
-
-                   <input type="radio" id="nudeSlides" name="shoes" value="nudeSlides">
-                   <label for="nudeSlides"><img src="thumbnails/shoes/nudeSlides.png" alt="Nude Slides"></label>
-
-
-                   <input type="radio" id="blackLaceHeels" name="shoes" value="blackLaceHeels">
-                   <label for="blackLaceHeels"><img src="thumbnails/shoes/blackLaceHeels.png" alt="Black Lace Heels"></label>
-
-
-                   <input type="radio" id="canvasSneakers" name="shoes" value="canvasSneakers">
-                   <label for="canvasSneakers"><img src="thumbnails/shoes/canvasSneakers.png" alt="Canvas Sneakers"></label>
-
-
-                   <input type="radio" id="pinkHeels" name="shoes" value="pinkHeels">
-                   <label for="pinkHeels"><img src="thumbnails/shoes/pinkHeels.png" alt="Pink Heels"></label>
-
-
-                   <input type="radio" id="blackSneakers" name="shoes" value="blackSneakers">
-                   <label for="blackSneakers"><img src="thumbnails/shoes/blackSneakers.png" alt="Black Sneakers"></label>
-
-
-                   <input type="radio" id="greySneakers" name="shoes" value="greySneakers">
-                   <label for="greySneakers"><img src="thumbnails/shoes/greySneakers.png" alt="Grey Sneakers"></label>
-
-
-                   <input type="radio" id="blueSneakers" name="shoes" value="blueSneakers">
-                   <label for="blueSneakers"><img src="thumbnails/shoes/blueSneakers.png" alt="Blue Sneakers"></label>
-
-
-                   <input type="radio" id="whiteHeels" name="shoes" value="whiteHeels">
-                   <label for="whiteHeels"><img src="thumbnails/shoes/whiteHeels.png" alt="White Heels"></label>
-
-
-                   <input type="radio" id="pinkDolly" name="shoes" value="pinkDolly">
-                   <label for="pinkDolly"><img src="thumbnails/shoes/pinkDolly.png" alt="Pink Dolly Shoes"></label>
-
-
-                   <input type="radio" id="violetDolly" name="shoes" value="violetDolly">
-                   <label for="violetDolly"><img src="thumbnails/shoes/violetDolly.png" alt="Violet Dolly Shoes"></label>
-
-
-                   <input type="radio" id="blueDolly" name="shoes" value="blueDolly">
-                   <label for="blueDolly"><img src="thumbnails/shoes/blueDolly.png" alt="Blue Dolly Shoes"></label>
-               </div>
-
-
-               <!-- Earrings Options -->
-               <h2 class="collapsible">Earrings</h2>
-               <div class="radio-buttons" id="earrings-options">
-                   <input type="radio" id="noEarrings" name="earrings" value="noEarrings" checked>
-                   <label for="noEarrings"><img src="thumbnails/earrings/noEarrings.png" alt="No Earrings"></label>
-
-
-                   <input type="radio" id="diamondStuds" name="earrings" value="diamondStuds">
-                   <label for="diamondStuds"><img src="thumbnails/earrings/diamondStuds.png" alt="Diamond Studs"></label>
-
-
-                   <input type="radio" id="goldHoops" name="earrings" value="goldHoops">
-                   <label for="goldHoops"><img src="thumbnails/earrings/goldHoops.png" alt="Gold Hoops"></label>
-
-
-                   <input type="radio" id="silverHoops" name="earrings" value="silverHoops">
-                   <label for="silverHoops"><img src="thumbnails/earrings/silverHoops.png" alt="Silver Hoops"></label>
-
-
-                   <input type="radio" id="heartStuds" name="earrings" value="heartStuds">
-                   <label for="heartStuds"><img src="thumbnails/earrings/heartStuds.png" alt="Heart Studs"></label>
-
-
-                   <input type="radio" id="hexagonHoops" name="earrings" value="hexagonHoops">
-                   <label for="hexagonHoops"><img src="thumbnails/earrings/hexagonHoops.png" alt="Hexagon Hoops"></label>
-
-
-                   <input type="radio" id="miniHoops" name="earrings" value="miniHoops">
-                   <label for="miniHoops"><img src="thumbnails/earrings/miniHoops.png" alt="Mini Hoops"></label>
-
-
-                   <input type="radio" id="ovalEarrings" name="earrings" value="ovalEarrings">
-                   <label for="ovalEarrings"><img src="thumbnails/earrings/ovalEarrings.png" alt="Oval Earrings"></label>
-               </div>
-
-
-               <!-- Other Features Options -->
-               <h2 class="collapsible">Other Features</h2>
-               <div class="radio-buttons" id="otherFeatures-options">
-                  <!-- <input type="checkbox" id="noFeatures" name="otherFeatures" value="noFeatures" checked>
-                   <label for="noFeatures"><img src="thumbnails/otherFeatures/noFeatures.png" alt="No Features"></label> -->
-
-
-                   <input type="checkbox" id="moles" name="otherFeatures" value="moles">
-                   <label for="moles"><img src="thumbnails/otherFeatures/moles.png" alt="Moles"></label>
-
-
-                   <input type="checkbox" id="freckles" name="otherFeatures" value="freckles">
-                   <label for="freckles"><img src="thumbnails/otherFeatures/freckles.png" alt="Freckles"></label>
-
-
-                   <input type="checkbox" id="faceInk" name="otherFeatures" value="faceInk">
-                   <label for="faceInk"><img src="thumbnails/otherFeatures/faceInk.png" alt="Face Ink"></label>
-
-
-                   <input type="checkbox" id="leftArmTattoo" name="otherFeatures" value="leftArmTattoo">
-                   <label for="leftArmTattoo"><img src="thumbnails/otherFeatures/leftArmTattoo.png" alt="Left Arm Tattoo"></label>
-
-
-                   <input type="checkbox" id="rightArmTattoo" name="otherFeatures" value="rightArmTattoo">
-                   <label for="rightArmTattoo"><img src="thumbnails/otherFeatures/rightArmTattoo.png" alt="Right Arm Tattoo"></label>
-
-
-                   <input type="checkbox" id="legTattoo" name="otherFeatures" value="legTattoo">
-                   <label for="legTattoo"><img src="thumbnails/otherFeatures/legTattoo.png" alt="Leg Tattoo"></label>
-
-
-                   <input type="checkbox" id="sternumTattoo" name="otherFeatures" value="sternumTattoo">
-                   <label for="sternumTattoo"><img src="thumbnails/otherFeatures/sternumTattoo.png" alt="Sternum Tattoo"></label>
-
-
-                   <input type="checkbox" id="noseStud" name="otherFeatures" value="noseStud">
-                   <label for="noseStud"><img src="thumbnails/otherFeatures/noseStud.png" alt="Nose Stud"></label>
-
-
-                   <input type="checkbox" id="noseRing" name="otherFeatures" value="noseRing">
-                   <label for="noseRing"><img src="thumbnails/otherFeatures/noseRing.png" alt="Nose Ring"></label>
-
-
-                   <input type="checkbox" id="septum" name="otherFeatures" value="septum">
-                   <label for="septum"><img src="thumbnails/otherFeatures/septum.png" alt="Septum"></label>
-               </div>
-           </div>
-           </div>
-
-
-           <!-- Character Preview -->
-           <div class="preview-container">
-           <div id="character-preview">
-               <div id="loader" style="display: none;">
-                   <img src="loader.gif" alt="Loading..." />
-               </div>
-               <img src="" alt="Character Preview">
-           </div>
-
-
-           <!-- Submit Button -->
-           <button id="submit-button" onclick="submitDesign()">Submit Design</button>
-           </div>
-           <div id="hidden-container" style="display: none;"></div>
-       </div>
-
-
-   </main>
-   <script>
-       // Function to handle submitting the design
-       function submitDesign() {
-           // Your submission logic here...
-           alert("Design submitted!"); // For demonstration purposes
-       }
-   </script>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Character Customizer</title>
+            <link rel="stylesheet" href="styles.css">
+            <script src="script.js" defer></script>
+        </head>
+        <body>
+            <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+        <!-- CHARACTER CUSTOMIZER -->
+        <header>
+            <h1>Character Customizer</h1>
+        </header>
+
+                <main>
+                <div class="options-container"></div>
+                <div class="options">
+                <!-- Background Options -->
+                <h2 class="collapsible">Background</h2>
+                <div class="radio-buttons" id="background-options">
+                    <input type="radio" id="blue" name="background" value="blue" checked>
+                    <label for="blue"><img src="thumbnails/background/blue.png" alt="Blue"></label>
+
+                    <input type="radio" id="pink" name="background" value="pink">
+                    <label for="pink"><img src="thumbnails/background/pink.png" alt="Pink"></label>
+
+                    <input type="radio" id="purple" name="background" value="purple">
+                    <label for="purple"><img src="thumbnails/background/purple.png" alt="Purple"></label>
+
+                    <input type="radio" id="green" name="background" value="green">
+                    <label for="green"><img src="thumbnails/background/green.png" alt="Green"></label>
+
+                    <input type="radio" id="beige" name="background" value="beige">
+                    <label for="beige"><img src="thumbnails/background/beige.png" alt="Beige"></label>
+
+                    <input type="radio" id="grey" name="background" value="grey">
+                    <label for="grey"><img src="thumbnails/background/grey.png" alt="Grey"></label>
+                </div>
+
+                <!-- Skin Tone Options -->
+                <h2 class="collapsible">Skin Tone</h2>
+                <div class="radio-buttons" id="skin-options">
+                    <input type="radio" id="fair" name="skin" value="fair" checked>
+                    <label for="fair"><img src="thumbnails/skin/fair.png" alt="Fair"></label>
+
+                    <input type="radio" id="tan" name="skin" value="tan">
+                    <label for="tan"><img src="thumbnails/skin/tan.png" alt="Tan"></label>
+
+                    <input type="radio" id="deep" name="skin" value="deep">
+                    <label for="deep"><img src="thumbnails/skin/deep.png" alt="Deep"></label>
+
+                    <input type="radio" id="deeper" name="skin" value="deeper">
+                    <label for="deeper"><img src="thumbnails/skin/deeper.png" alt="Deeper"></label>
+                </div>
+
+                <!-- Eye Color Options -->
+                <h2 class="collapsible">Eye Color</h2>
+                <div class="radio-buttons" id="eyes-options">
+                    <input type="radio" id="hazelEyes" name="eyes" value="hazelEyes" checked>
+                    <label for="hazelEyes"><img src="thumbnails/eyes/hazelEyes.png" alt="Hazel"></label>
+
+                    <input type="radio" id="blueEyes" name="eyes" value="blueEyes">
+                    <label for="blueEyes"><img src="thumbnails/eyes/blueEyes.png" alt="Blue"></label>
+
+                    <input type="radio" id="greenEyes" name="eyes" value="greenEyes">
+                    <label for="greenEyes"><img src="thumbnails/eyes/greenEyes.png" alt="Green"></label>
+
+                    <input type="radio" id="darkBrownEyes" name="eyes" value="darkBrownEyes">
+                    <label for="darkBrownEyes"><img src="thumbnails/eyes/darkBrownEyes.png" alt="Dark Brown"></label>
+                </div>
+
+                <!-- Hairstyle Options -->
+                <h2 class="collapsible">Hairstyle</h2>
+                <div class="radio-buttons" id="hairstyle-options">
+                    <!-- Messy Bun -->
+                    <input type="radio" id="messyBun" name="hairstyle" value="messyBun" checked>
+                    <label for="messyBun"><img src="thumbnails/hairstyle/messyBun.png" alt="Messy Bun"></label>
+
+                    <!-- Long Curly -->
+                    <input type="radio" id="longCurly" name="hairstyle" value="longCurly">
+                    <label for="longCurly"><img src="thumbnails/hairstyle/longCurly.png" alt="Long Curly"></label>
+
+                    <!-- Long Wavy -->
+                    <input type="radio" id="longWavy" name="hairstyle" value="longWavy">
+                    <label for="longWavy"><img src="thumbnails/hairstyle/longWavy.png" alt="Long Wavy"></label>
+
+                    <!-- Afro -->
+                    <input type="radio" id="afro" name="hairstyle" value="afro">
+                    <label for="afro"><img src="thumbnails/hairstyle/afro.png" alt="Afro"></label>
+
+                    <!-- Cornrows -->
+                    <input type="radio" id="cornrows" name="hairstyle" value="cornrows">
+                    <label for="cornrows"><img src="thumbnails/hairstyle/cornrows.png" alt="Cornrows"></label>
+
+                    <!-- Curly Ponytail -->
+                    <input type="radio" id="curlyPonytail" name="hairstyle" value="curlyPonytail">
+                    <label for="curlyPonytail"><img src="thumbnails/hairstyle/curlyPonytail.png" alt="Curly Ponytail"></label>
+
+                    <!-- Curly Space Buns -->
+                    <input type="radio" id="curlySpaceBuns" name="hairstyle" value="curlySpaceBuns">
+                    <label for="curlySpaceBuns"><img src="thumbnails/hairstyle/curlySpaceBuns.png" alt="Curly Space Buns"></label>
+
+                    <!-- High Puff -->
+                    <input type="radio" id="highPuff" name="hairstyle" value="highPuff">
+                    <label for="highPuff"><img src="thumbnails/hairstyle/highPuff.png" alt="High Puff"></label>
+
+                    <!-- Locs -->
+                    <input type="radio" id="locs" name="hairstyle" value="locs">
+                    <label for="locs"><img src="thumbnails/hairstyle/locs.png" alt="Locs"></label>
+
+                    <!-- Short Bob -->
+                    <input type="radio" id="shortBob" name="hairstyle" value="shortBob">
+                    <label for="shortBob"><img src="thumbnails/hairstyle/shortBob.png" alt="Short Bob"></label>
+
+                    <!-- Ponytail -->
+                    <input type="radio" id="ponytail" name="hairstyle" value="ponytail">
+                    <label for="ponytail"><img src="thumbnails/hairstyle/ponytail.png" alt="Ponytail"></label>
+
+                    <!-- Short Straight -->
+                    <input type="radio" id="shortStraight" name="hairstyle" value="shortStraight">
+                    <label for="shortStraight"><img src="thumbnails/hairstyle/shortStraight.png" alt="Short Straight"></label>
+
+                    <!-- Wavy -->
+                    <input type="radio" id="wavy" name="hairstyle" value="wavy">
+                    <label for="wavy"><img src="thumbnails/hairstyle/wavy.png" alt="Wavy"></label>
+                </div>
+            
+                <!-- Hair Color Options -->
+                <h2 class="collapsible">Hair Color</h2>
+                <div class="radio-buttons hair-color-options">
+
+                    <!-- Hair color options for Messy Bun -->
+                    <div id="messyBun-color-options" class="color-options">
+                            <input type="radio" id="messyBun-black" name="hair-color" value="black" checked>
+                            <label for="messyBun-black"><img src="thumbnails/hairstyle/messyBun/black.png" alt="Black"></label>
+                            <input type="radio" id="messyBun-blonde" name="hair-color" value="blonde">
+                            <label for="messyBun-blonde"><img src="thumbnails/hairstyle/messyBun/blonde.png" alt="Blonde"></label>
+                            <input type="radio" id="messyBun-darkBrown" name="hair-color" value="darkBrown">
+                            <label for="messyBun-darkBrown"><img src="thumbnails/hairstyle/messyBun/darkBrown.png" alt="Dark Brown"></label>
+                            <input type="radio" id="messyBun-lightBrown" name="hair-color" value="lightBrown">
+                            <label for="messyBun-lightBrown"><img src="thumbnails/hairstyle/messyBun/lightBrown.png" alt="Light Brown"></label>
+                            <input type="radio" id="messyBun-ginger" name="hair-color" value="ginger">
+                            <label for="messyBun-ginger"><img src="thumbnails/hairstyle/messyBun/ginger.png" alt="Ginger"></label>
+                            <input type="radio" id="messyBun-red" name="hair-color" value="red">
+                            <label for="messyBun-red"><img src="thumbnails/hairstyle/messyBun/red.png" alt="Red"></label>
+                            <input type="radio" id="messyBun-blue" name="hair-color" value="blue">
+                            <label for="messyBun-blue"><img src="thumbnails/hairstyle/messyBun/blue.png" alt="Blue"></label>
+                            <input type="radio" id="messyBun-green" name="hair-color" value="green">
+                            <label for="messyBun-green"><img src="thumbnails/hairstyle/messyBun/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Long Curly -->
+                    <div id="longCurly-color-options" class="color-options">
+                        <input type="radio" id="longCurly-black" name="hair-color" value="black" checked>
+                        <label for="longCurly-black"><img src="thumbnails/hairstyle/longCurly/black.png" alt="Black"></label>
+                        <input type="radio" id="longCurly-blonde" name="hair-color" value="blonde">
+                        <label for="longCurly-blonde"><img src="thumbnails/hairstyle/longCurly/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="longCurly-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="longCurly-darkBrown"><img src="thumbnails/hairstyle/longCurly/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="longCurly-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="longCurly-lightBrown"><img src="thumbnails/hairstyle/longCurly/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="longCurly-ginger" name="hair-color" value="ginger">
+                        <label for="longCurly-ginger"><img src="thumbnails/hairstyle/longCurly/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="longCurly-red" name="hair-color" value="red">
+                        <label for="longCurly-red"><img src="thumbnails/hairstyle/longCurly/red.png" alt="Red"></label>
+                        <input type="radio" id="longCurly-blue" name="hair-color" value="blue">
+                        <label for="longCurly-blue"><img src="thumbnails/hairstyle/longCurly/blue.png" alt="Blue"></label>
+                        <input type="radio" id="longCurly-green" name="hair-color" value="green">
+                        <label for="longCurly-green"><img src="thumbnails/hairstyle/longCurly/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Long Wavy -->
+                    <div id="longWavy-color-options" class="color-options">
+                        <input type="radio" id="longWavy-black" name="hair-color" value="black" checked>
+                        <label for="longWavy-black"><img src="thumbnails/hairstyle/longWavy/black.png" alt="Black"></label>
+                        <input type="radio" id="longWavy-blonde" name="hair-color" value="blonde">
+                        <label for="longWavy-blonde"><img src="thumbnails/hairstyle/longWavy/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="longWavy-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="longWavy-darkBrown"><img src="thumbnails/hairstyle/longWavy/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="longWavy-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="longWavy-lightBrown"><img src="thumbnails/hairstyle/longWavy/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="longWavy-ginger" name="hair-color" value="ginger">
+                        <label for="longWavy-ginger"><img src="thumbnails/hairstyle/longWavy/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="longWavy-red" name="hair-color" value="red">
+                        <label for="longWavy-red"><img src="thumbnails/hairstyle/longWavy/red.png" alt="Red"></label>
+                        <input type="radio" id="longWavy-blue" name="hair-color" value="blue">
+                        <label for="longWavy-blue"><img src="thumbnails/hairstyle/longWavy/blue.png" alt="Blue"></label>
+                        <input type="radio" id="longWavy-green" name="hair-color" value="green">
+                        <label for="longWavy-green"><img src="thumbnails/hairstyle/longWavy/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Afro -->
+                    <div id="afro-color-options" class="color-options">
+                        <input type="radio" id="afro-black" name="hair-color" value="black" checked>
+                        <label for="afro-black"><img src="thumbnails/hairstyle/afro/black.png" alt="Black"></label>
+                        <input type="radio" id="afro-blonde" name="hair-color" value="blonde">
+                        <label for="afro-blonde"><img src="thumbnails/hairstyle/afro/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="afro-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="afro-darkBrown"><img src="thumbnails/hairstyle/afro/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="afro-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="afro-lightBrown"><img src="thumbnails/hairstyle/afro/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="afro-ginger" name="hair-color" value="ginger">
+                        <label for="afro-ginger"><img src="thumbnails/hairstyle/afro/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="afro-red" name="hair-color" value="red">
+                        <label for="afro-red"><img src="thumbnails/hairstyle/afro/red.png" alt="Red"></label>
+                        <input type="radio" id="afro-blue" name="hair-color" value="blue">
+                        <label for="afro-blue"><img src="thumbnails/hairstyle/afro/blue.png" alt="Blue"></label>
+                        <input type="radio" id="afro-green" name="hair-color" value="green">
+                        <label for="afro-green"><img src="thumbnails/hairstyle/afro/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Cornrows -->
+                    <div id="cornrows-color-options" class="color-options">
+                        <input type="radio" id="cornrows-black" name="hair-color" value="black" checked>
+                        <label for="cornrows-black"><img src="thumbnails/hairstyle/cornrows/black.png" alt="Black"></label>
+                        <input type="radio" id="cornrows-blonde" name="hair-color" value="blonde">
+                        <label for="cornrows-blonde"><img src="thumbnails/hairstyle/cornrows/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="cornrows-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="cornrows-darkBrown"><img src="thumbnails/hairstyle/cornrows/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="cornrows-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="cornrows-lightBrown"><img src="thumbnails/hairstyle/cornrows/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="cornrows-ginger" name="hair-color" value="ginger">
+                        <label for="cornrows-ginger"><img src="thumbnails/hairstyle/cornrows/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="cornrows-red" name="hair-color" value="red">
+                        <label for="cornrows-red"><img src="thumbnails/hairstyle/cornrows/red.png" alt="Red"></label>
+                        <input type="radio" id="cornrows-blue" name="hair-color" value="blue">
+                        <label for="cornrows-blue"><img src="thumbnails/hairstyle/cornrows/blue.png" alt="Blue"></label>
+                        <input type="radio" id="cornrows-green" name="hair-color" value="green">
+                        <label for="cornrows-green"><img src="thumbnails/hairstyle/cornrows/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Long Straight -->
+                    <div id="longStraight-color-options" class="color-options">
+                        <input type="radio" id="longStraight-black" name="hair-color" value="black" checked>
+                        <label for="longStraight-black"><img src="thumbnails/hairstyle/longStraight/black.png" alt="Black"></label>
+                        <input type="radio" id="longStraight-blonde" name="hair-color" value="blonde">
+                        <label for="longStraight-blonde"><img src="thumbnails/hairstyle/longStraight/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="longStraight-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="longStraight-darkBrown"><img src="thumbnails/hairstyle/longStraight/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="longStraight-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="longStraight-lightBrown"><img src="thumbnails/hairstyle/longStraight/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="longStraight-ginger" name="hair-color" value="ginger">
+                        <label for="longStraight-ginger"><img src="thumbnails/hairstyle/longStraight/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="longStraight-red" name="hair-color" value="red">
+                        <label for="longStraight-red"><img src="thumbnails/hairstyle/longStraight/red.png" alt="Red"></label>
+                        <input type="radio" id="longStraight-blue" name="hair-color" value="blue">
+                        <label for="longStraight-blue"><img src="thumbnails/hairstyle/longStraight/blue.png" alt="Blue"></label>
+                        <input type="radio" id="longStraight-green" name="hair-color" value="green">
+                        <label for="longStraight-green"><img src="thumbnails/hairstyle/longStraight/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Curly Ponytail -->
+                    <div id="curlyPonytail-color-options" class="color-options">
+                        <input type="radio" id="curlyPonytail-black" name="hair-color" value="black" checked>
+                        <label for="curlyPonytail-black"><img src="thumbnails/hairstyle/curlyPonytail/black.png" alt="Black"></label>
+                        <input type="radio" id="curlyPonytail-blonde" name="hair-color" value="blonde">
+                        <label for="curlyPonytail-blonde"><img src="thumbnails/hairstyle/curlyPonytail/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="curlyPonytail-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="curlyPonytail-darkBrown"><img src="thumbnails/hairstyle/curlyPonytail/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="curlyPonytail-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="curlyPonytail-lightBrown"><img src="thumbnails/hairstyle/curlyPonytail/lightBrown.png" alt="Light Background"></label>
+                        <input type="radio" id="curlyPonytail-ginger" name="hair-color" value="ginger">
+                        <label for="curlyPonytail-ginger"><img src="thumbnails/hairstyle/curlyPonytail/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="curlyPonytail-red" name="hair-color" value="red">
+                        <label for="curlyPonytail-red"><img src="thumbnails/hairstyle/curlyPonytail/red.png" alt="Red"></label>
+                        <input type="radio" id="curlyPonytail-blue" name="hair-color" value="blue">
+                        <label for="curlyPonytail-blue"><img src="thumbnails/hairstyle/curlyPonytail/blue.png" alt="Blue"></label>
+                        <input type="radio" id="curlyPonytail-green" name="hair-color" value="green">
+                        <label for="curlyPonytail-green"><img src="thumbnails/hairstyle/curlyPonytail/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Curly Space Buns -->
+                    <div id="curlySpaceBuns-color-options" class="color-options">
+                        <input type="radio" id="curlySpaceBuns-black" name="hair-color" value="black" checked>
+                        <label for="curlySpaceBuns-black"><img src="thumbnails/hairstyle/curlySpaceBuns/black.png" alt="Black"></label>
+                        <input type="radio" id="curlySpaceBuns-blonde" name="hair-color" value="blonde">
+                        <label for="curlySpaceBuns-blonde"><img src="thumbnails/hairstyle/curlySpaceBuns/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="curlySpaceBuns-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="curlySpaceBuns-darkBrown"><img src="thumbnails/hairstyle/curlySpaceBuns/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="curlySpaceBuns-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="curlySpaceBuns-lightBrown"><img src="thumbnails/hairstyle/curlySpaceBuns/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="curlySpaceBuns-ginger" name="hair-color" value="ginger">
+                        <label for="curlySpaceBuns-ginger"><img src="thumbnails/hairstyle/curlySpaceBuns/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="curlySpaceBuns-red" name="hair-color" value="red">
+                        <label for="curlySpaceBuns-red"><img src="thumbnails/hairstyle/curlySpaceBuns/red.png" alt="Red"></label>
+                        <input type="radio" id="curlySpaceBuns-blue" name="hair-color" value="blue">
+                        <label for="curlySpaceBuns-blue"><img src="thumbnails/hairstyle/curlySpaceBuns/blue.png" alt="Blue"></label>
+                        <input type="radio" id="curlySpaceBuns-green" name="hair-color" value="green">
+                        <label for="curlySpaceBuns-green"><img src="thumbnails/hairstyle/curlySpaceBuns/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for High Puff -->
+                    <div id="highPuff-color-options" class="color-options">
+                        <input type="radio" id="highPuff-black" name="hair-color" value="black" checked>
+                        <label for="highPuff-black"><img src="thumbnails/hairstyle/highPuff/black.png" alt="Black"></label>
+                        <input type="radio" id="highPuff-blonde" name="hair-color" value="blonde">
+                        <label for="highPuff-blonde"><img src="thumbnails/hairstyle/highPuff/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="highPuff-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="highPuff-darkBrown"><img src="thumbnails/hairstyle/highPuff/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="highPuff-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="highPuff-lightBrown"><img src="thumbnails/hairstyle/highPuff/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="highPuff-ginger" name="hair-color" value="ginger">
+                        <label for="highPuff-ginger"><img src="thumbnails/hairstyle/highPuff/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="highPuff-red" name="hair-color" value="red">
+                        <label for="highPuff-red"><img src="thumbnails/hairstyle/highPuff/red.png" alt="Red"></label>
+                        <input type="radio" id="highPuff-blue" name="hair-color" value="blue">
+                        <label for="highPuff-blue"><img src="thumbnails/hairstyle/highPuff/blue.png" alt="Blue"></label>
+                        <input type="radio" id="highPuff-green" name="hair-color" value="green">
+                        <label for="highPuff-green"><img src="thumbnails/hairstyle/highPuff/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Locs -->
+                    <div id="locs-color-options" class="color-options">
+                        <input type="radio" id="locs-black" name="hair-color" value="black" checked>
+                        <label for="locs-black"><img src="thumbnails/hairstyle/locs/black.png" alt="Black"></label>
+                        <input type="radio" id="locs-blonde" name="hair-color" value="blonde">
+                        <label for="locs-blonde"><img src="thumbnails/hairstyle/locs/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="locs-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="locs-darkBrown"><img src="thumbnails/hairstyle/locs/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="locs-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="locs-lightBrown"><img src="thumbnails/hairstyle/locs/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="locs-ginger" name="hair-color" value="ginger">
+                        <label for="locs-ginger"><img src="thumbnails/hairstyle/locs/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="locs-red" name="hair-color" value="red">
+                        <label for="locs-red"><img src="thumbnails/hairstyle/locs/red.png" alt="Red"></label>
+                        <input type="radio" id="locs-blue" name="hair-color" value="blue">
+                        <label for="locs-blue"><img src="thumbnails/hairstyle/locs/blue.png" alt="Blue"></label>
+                        <input type="radio" id="locs-green" name="hair-color" value="green">
+                        <label for="locs-green"><img src="thumbnails/hairstyle/locs/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Short Bob -->
+                    <div id="shortBob-color-options" class="color-options">
+                        <input type="radio" id="shortBob-black" name="hair-color" value="black" checked>
+                        <label for="shortBob-black"><img src="thumbnails/hairstyle/shortBob/black.png" alt="Black"></label>
+                        <input type="radio" id="shortBob-blonde" name="hair-color" value="blonde">
+                        <label for="shortBob-blonde"><img src="thumbnails/hairstyle/shortBob/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="shortBob-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="shortBob-darkBrown"><img src="thumbnails/hairstyle/shortBob/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="shortBob-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="shortBob-lightBrown"><img src="thumbnails/hairstyle/shortBob/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="shortBob-ginger" name="hair-color" value="ginger">
+                        <label for="shortBob-ginger"><img src="thumbnails/hairstyle/shortBob/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="shortBob-red" name="hair-color" value="red">
+                        <label for="shortBob-red"><img src="thumbnails/hairstyle/shortBob/red.png" alt="Red"></label>
+                        <input type="radio" id="shortBob-blue" name="hair-color" value="blue">
+                        <label for="shortBob-blue"><img src="thumbnails/hairstyle/shortBob/blue.png" alt="Blue"></label>
+                        <input type="radio" id="shortBob-green" name="hair-color" value="green">
+                        <label for="shortBob-green"><img src="thumbnails/hairstyle/shortBob/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Ponytail -->
+                    <div id="ponytail-color-options" class="color-options">
+                        <input type="radio" id="ponytail-black" name="hair-color" value="black" checked>
+                        <label for="ponytail-black"><img src="thumbnails/hairstyle/ponytail/black.png" alt="Black"></label>
+                        <input type="radio" id="ponytail-blonde" name="hair-color" value="blonde">
+                        <label for="ponytail-blonde"><img src="thumbnails/hairstyle/ponytail/blonde.png" alt="Blonde"></label>
+                        <input type="radio" id="ponytail-darkBrown" name="hair-color" value="darkBrown">
+                        <label for="ponytail-darkBrown"><img src="thumbnails/hairstyle/ponytail/darkBrown.png" alt="Dark Brown"></label>
+                        <input type="radio" id="ponytail-lightBrown" name="hair-color" value="lightBrown">
+                        <label for="ponytail-lightBrown"><img src="thumbnails/hairstyle/ponytail/lightBrown.png" alt="Light Brown"></label>
+                        <input type="radio" id="ponytail-ginger" name="hair-color" value="ginger">
+                        <label for="ponytail-ginger"><img src="thumbnails/hairstyle/ponytail/ginger.png" alt="Ginger"></label>
+                        <input type="radio" id="ponytail-red" name="hair-color" value="red">
+                        <label for="ponytail-red"><img src="thumbnails/hairstyle/ponytail/red.png" alt="Red"></label>
+                        <input type="radio" id="ponytail-blue" name="hair-color" value="blue">
+                        <label for="ponytail-blue"><img src="thumbnails/hairstyle/ponytail/blue.png" alt="Blue"></label>
+                        <input type="radio" id="ponytail-green" name="hair-color" value="green">
+                        <label for="ponytail-green"><img src="thumbnails/hairstyle/ponytail/green.png" alt="Green"></label>
+                    </div>
+
+                    <!-- Hair color options for Short Straight -->
+                    <div id="shortStraight-color-options" class="color-options">
+                    <input type="radio" id="shortStraight-black" name="hair-color" value="black" checked>
+                    <label for="shortStraight-black"><img src="thumbnails/hairstyle/shortStraight/black.png" alt="Black"></label>
+                    <input type="radio" id="shortStraight-blonde" name="hair-color" value="blonde">
+                    <label for="shortStraight-blonde"><img src="thumbnails/hairstyle/shortStraight/blonde.png" alt="Blonde"></label>
+                    <input type="radio" id="shortStraight-darkBrown" name="hair-color" value="darkBrown">
+                    <label for="shortStraight-darkBrown"><img src="thumbnails/hairstyle/shortStraight/darkBrown.png" alt="Dark Brown"></label>
+                    <input type="radio" id="shortStraight-lightBrown" name="hair-color" value="lightBrown">
+                    <label for="shortStraight-lightBrown"><img src="thumbnails/hairstyle/shortStraight/lightBrown.png" alt="Light Brown"></label>
+                    <input type="radio" id="shortStraight-ginger" name="hair-color" value="ginger">
+                    <label for="shortStraight-ginger"><img src="thumbnails/hairstyle/shortStraight/ginger.png" alt="Ginger"></label>
+                    <input type="radio" id="shortStraight-red" name="hair-color" value="red">
+                    <label for="shortStraight-red"><img src="thumbnails/hairstyle/shortStraight/red.png" alt="Red"></label>
+                    <input type="radio" id="shortStraight-blue" name="hair-color" value="blue">
+                    <label for="shortStraight-blue"><img src="thumbnails/hairstyle/shortStraight/blue.png" alt="Blue"></label>
+                    <input type="radio" id="shortStraight-green" name="hair-color" value="green">
+                    <label for="shortStraight-green"><img src="thumbnails/hairstyle/shortStraight/green.png" alt="Green"></label>
+                </div>
+
+                <!-- Hair color options for Wavy -->
+                <div id="wavy-color-options" class="color-options">
+                    <input type="radio" id="wavy-black" name="hair-color" value="black" checked>
+                    <label for="wavy-black"><img src="thumbnails/hairstyle/wavy/black.png" alt="Black"></label>
+                    <input type="radio" id="wavy-blonde" name="hair-color" value="blonde">
+                    <label for="wavy-blonde"><img src="thumbnails/hairstyle/wavy/blonde.png" alt="Blonde"></label>
+                    <input type="radio" id="wavy-darkBrown" name="hair-color" value="darkBrown">
+                    <label for="wavy-darkBrown"><img src="thumbnails/hairstyle/wavy/darkBrown.png" alt="Dark Brown"></label>
+                    <input type="radio" id="wavy-lightBrown" name="hair-color" value="lightBrown">
+                    <label for="wavy-lightBrown"><img src="thumbnails/hairstyle/wavy/lightBrown.png" alt="Light Brown"></label>
+                    <input type="radio" id="wavy-ginger" name="hair-color" value="ginger">
+                    <label for="wavy-ginger"><img src="thumbnails/hairstyle/wavy/ginger.png" alt="Ginger"></label>
+                    <input type="radio" id="wavy-red" name="hair-color" value="red">
+                    <label for="wavy-red"><img src="thumbnails/hairstyle/wavy/red.png" alt="Red"></label>
+                    <input type="radio" id="wavy-blue" name="hair-color" value="blue">
+                    <label for="wavy-blue"><img src="thumbnails/hairstyle/wavy/blue.png" alt="Blue"></label>
+                    <input type="radio" id="wavy-green" name="hair-color" value="green">
+                    <label for="wavy-green"><img src="thumbnails/hairstyle/wavy/green.png" alt="Green"></label>
+                </div>
+                </div>
+
+
+                <!-- Tops Options -->
+                <h2 class="collapsible">Tops</h2>
+                <div class="radio-buttons" id="tops-options">
+                    <input type="radio" id="bra" name="tops" value="bra" checked>
+                    <label for="bra"><img src="thumbnails/tops/bra.png" alt="Bra"></label>
+
+                    <input type="radio" id="bandeau" name="tops" value="bandeau">
+                    <label for="bandeau"><img src="thumbnails/tops/bandeau.png" alt="Bandeau"></label>
+
+                    <input type="radio" id="corset" name="tops" value="corset">
+                    <label for="corset"><img src="thumbnails/tops/corset.png" alt="Corset"></label>
+
+                    <input type="radio" id="cropCardigan" name="tops" value="cropCardigan">
+                    <label for="cropCardigan"><img src="thumbnails/tops/cropCardigan.png" alt="Crop Cardigan"></label>
+
+                    <input type="radio" id="cropJumper" name="tops" value="cropJumper">
+                    <label for="cropJumper"><img src="thumbnails/tops/cropJumper.png" alt="Crop Jumper"></label>
+
+                    <input type="radio" id="croppedPuffer" name="tops" value="croppedPuffer">
+                    <label for="croppedPuffer"><img src="thumbnails/tops/croppedPuffer.png" alt="Cropped Puffer"></label>
+
+                    <input type="radio" id="floralTop" name="tops" value="floralTop">
+                    <label for="floralTop"><img src="thumbnails/tops/floralTop.png" alt="Floral Top"></label>
+
+                    <input type="radio" id="frillSleeve" name="tops" value="frillSleeve">
+                    <label for="frillSleeve"><img src="thumbnails/tops/frillSleeve.png" alt="Frill Sleeve"></label>
+
+                    <input type="radio" id="graphicTee" name="tops" value="graphicTee">
+                    <label for="graphicTee"><img src="thumbnails/tops/graphicTee.png" alt="Graphic Tee"></label>
+
+                    <input type="radio" id="renaissanceTop" name="tops" value="renaissanceTop">
+                    <label for="renaissanceTop"><img src="thumbnails/tops/renaissanceTop.png" alt="Renaissance Top"></label>
+
+                    <input type="radio" id="blackWrapCrop" name="tops" value="blackWrapCrop">
+                    <label for="blackWrapCrop"><img src="thumbnails/tops/blackWrapCrop.png" alt="Black Wrap Crop"></label>
+
+                    <input type="radio" id="pinkWrapCrop" name="tops" value="pinkWrapCrop">
+                    <label for="pinkWrapCrop"><img src="thumbnails/tops/pinkWrapCrop.png" alt="Pink Wrap Crop"></label>
+
+                    <input type="radio" id="yellowWrapCrop" name="tops" value="yellowWrapCrop">
+                    <label for="yellowWrapCrop"><img src="thumbnails/tops/yellowWrapCrop.png" alt="Yellow Wrap Crop"></label>
+
+                    <input type="radio" id="whiteTank" name="tops" value="whiteTank">
+                    <label for="whiteTank"><img src="thumbnails/tops/whiteTank.png" alt="White Tank"></label>
+
+                    <input type="radio" id="greyTank" name="tops" value="greyTank">
+                    <label for="greyTank"><img src="thumbnails/tops/greyTank.png" alt="Grey Tank"></label>
+
+                    <input type="radio" id="blueTank" name="tops" value="blueTank">
+                    <label for="blueTank"><img src="thumbnails/tops/blueTank.png" alt="Blue Tank"></label>
+
+                    <input type="radio" id="blackCroppedHoodie" name="tops" value="blackCroppedHoodie">
+                    <label for="blackCroppedHoodie"><img src="thumbnails/tops/blackCroppedHoodie.png" alt="Black Cropped Hoodie"></label>
+
+                    <input type="radio" id="greyCroppedHoodie" name="tops" value="greyCroppedHoodie">
+                    <label for="greyCroppedHoodie"><img src="thumbnails/tops/greyCroppedHoodie.png" alt="Grey Cropped Hoodie"></label>
+
+                    <input type="radio" id="pinkCroppedHoodie" name="tops" value="pinkCroppedHoodie">
+                    <label for="pinkCroppedHoodie"><img src="thumbnails/tops/pinkCroppedHoodie.png" alt="Pink Cropped Hoodie"></label>
+
+                    <input type="radio" id="blackHoodie" name="tops" value="blackHoodie">
+                    <label for="blackHoodie"><img src="thumbnails/tops/blackHoodie.png" alt="Black Hoodie"></label>
+
+                    <input type="radio" id="greyHoodie" name="tops" value="greyHoodie">
+                    <label for="greyHoodie"><img src="thumbnails/tops/greyHoodie.png" alt="Grey Hoodie"></label>
+
+                    <input type="radio" id="pinkHoodie" name="tops" value="pinkHoodie">
+                    <label for="pinkHoodie"><img src="thumbnails/tops/pinkHoodie.png" alt="Pink Hoodie"></label>
+                </div>
+            
+                <!-- Bottoms Options -->
+                <h2 class="collapsible">Bottoms</h2>
+                <div class="radio-buttons" id="bottoms-options">
+                    <input type="radio" id="knickers" name="bottoms" value="knickers" checked>
+                    <label for="knickers"><img src="thumbnails/bottoms/knickers.png" alt="Knickers"></label>
+
+                    <input type="radio" id="blackWrapSkirt" name="bottoms" value="blackWrapSkirt">
+                    <label for="blackWrapSkirt"><img src="thumbnails/bottoms/blackWrapSkirt.png" alt="Black Wrap Skirt"></label>
+
+                    <input type="radio" id="brownPants" name="bottoms" value="brownPants">
+                    <label for="brownPants"><img src="thumbnails/bottoms/brownPants.png" alt="Brown Pants"></label>
+
+                    <input type="radio" id="denimSkirt" name="bottoms" value="denimSkirt">
+                    <label for="denimSkirt"><img src="thumbnails/bottoms/denimSkirt.png" alt="Denim Skirt"></label>
+
+                    <input type="radio" id="flairJeans" name="bottoms" value="flairJeans">
+                    <label for="flairJeans"><img src="thumbnails/bottoms/flairJeans.png" alt="Flair Jeans"></label>
+
+                    <input type="radio" id="pleatedSkirt" name="bottoms" value="pleatedSkirt">
+                    <label for="pleatedSkirt"><img src="thumbnails/bottoms/pleatedSkirt.png" alt="Pleated Skirt"></label>
+
+                    <input type="radio" id="starJeans" name="bottoms" value="starJeans">
+                    <label for="starJeans"><img src="thumbnails/bottoms/starJeans.png" alt="Star Jeans"></label>
+
+                    <input type="radio" id="blackMomJeans" name="bottoms" value="blackMomJeans">
+                    <label for="blackMomJeans"><img src="thumbnails/bottoms/blackMomJeans.png" alt="Black Mom Jeans"></label>
+
+                    <input type="radio" id="blueMomJeans" name="bottoms" value="blueMomJeans">
+                    <label for="blueMomJeans"><img src="thumbnails/bottoms/blueMomJeans.png" alt="Blue Mom Jeans"></label>
+
+                    <input type="radio" id="greyMomJeans" name="bottoms" value="greyMomJeans">
+                    <label for="greyMomJeans"><img src="thumbnails/bottoms/greyMomJeans.png" alt="Grey Mom Jeans"></label>
+
+                    <input type="radio" id="khakiCargos" name="bottoms" value="khakiCargos">
+                    <label for="khakiCargos"><img src="thumbnails/bottoms/khakiCargos.png" alt="Khaki Cargos"></label>
+
+                    <input type="radio" id="greyCargos" name="bottoms" value="greyCargos">
+                    <label for="greyCargos"><img src="thumbnails/bottoms/greyCargos.png" alt="Grey Cargos"></label>
+
+                    <input type="radio" id="blackJoggers" name="bottoms" value="blackJoggers">
+                    <label for="blackJoggers"><img src="thumbnails/bottoms/blackJoggers.png" alt="Black Joggers"></label>
+
+                    <input type="radio" id="pinkJoggers" name="bottoms" value="pinkJoggers">
+                    <label for="pinkJoggers"><img src="thumbnails/bottoms/pinkJoggers.png" alt="Pink Joggers"></label>
+
+                    <input type="radio" id="greyJoggers" name="bottoms" value="greyJoggers">
+                    <label for="greyJoggers"><img src="thumbnails/bottoms/greyJoggers.png" alt="Grey Joggers"></label>
+
+                    <input type="radio" id="blackLeggings" name="bottoms" value="blackLeggings">
+                    <label for="blackLeggings"><img src="thumbnails/bottoms/blackLeggings.png" alt="Black Leggings"></label>
+
+                    <input type="radio" id="nudeLeggings" name="bottoms" value="nudeLeggings">
+                    <label for="nudeLeggings"><img src="thumbnails/bottoms/nudeLeggings.png" alt="Nude Leggings"></label>
+
+                    <input type="radio" id="blackShorts" name="bottoms" value="blackShorts">
+                    <label for="blackShorts"><img src="thumbnails/bottoms/blackShorts.png" alt="Black Shorts"></label>
+
+                    <input type="radio" id="greyShorts" name="bottoms" value="greyShorts">
+                    <label for="greyShorts"><img src="thumbnails/bottoms/greyShorts.png" alt="Grey Shorts"></label>
+
+                    <input type="radio" id="burgandyShorts" name="bottoms" value="burgandyShorts">
+                    <label for="burgandyShorts"><img src="thumbnails/bottoms/burgandyShorts.png" alt="Burgandy Shorts"></label>
+                </div>
+
+                <!-- Shoes Options -->
+                <h2 class="collapsible">Shoes</h2>
+                <div class="radio-buttons" id="shoes-options">
+                    <input type="radio" id="greySlides" name="shoes" value="greySlides" checked>
+                    <label for="greySlides"><img src="thumbnails/shoes/greySlides.png" alt="Grey Slides"></label>
+
+                    <input type="radio" id="nudeSlides" name="shoes" value="nudeSlides">
+                    <label for="nudeSlides"><img src="thumbnails/shoes/nudeSlides.png" alt="Nude Slides"></label>
+
+                    <input type="radio" id="blackLaceHeels" name="shoes" value="blackLaceHeels">
+                    <label for="blackLaceHeels"><img src="thumbnails/shoes/blackLaceHeels.png" alt="Black Lace Heels"></label>
+
+                    <input type="radio" id="canvasSneakers" name="shoes" value="canvasSneakers">
+                    <label for="canvasSneakers"><img src="thumbnails/shoes/canvasSneakers.png" alt="Canvas Sneakers"></label>
+
+                    <input type="radio" id="pinkHeels" name="shoes" value="pinkHeels">
+                    <label for="pinkHeels"><img src="thumbnails/shoes/pinkHeels.png" alt="Pink Heels"></label>
+
+                    <input type="radio" id="blackSneakers" name="shoes" value="blackSneakers">
+                    <label for="blackSneakers"><img src="thumbnails/shoes/blackSneakers.png" alt="Black Sneakers"></label>
+
+                    <input type="radio" id="greySneakers" name="shoes" value="greySneakers">
+                    <label for="greySneakers"><img src="thumbnails/shoes/greySneakers.png" alt="Grey Sneakers"></label>
+
+                    <input type="radio" id="blueSneakers" name="shoes" value="blueSneakers">
+                    <label for="blueSneakers"><img src="thumbnails/shoes/blueSneakers.png" alt="Blue Sneakers"></label>
+
+                    <input type="radio" id="whiteHeels" name="shoes" value="whiteHeels">
+                    <label for="whiteHeels"><img src="thumbnails/shoes/whiteHeels.png" alt="White Heels"></label>
+
+                    <input type="radio" id="pinkDolly" name="shoes" value="pinkDolly">
+                    <label for="pinkDolly"><img src="thumbnails/shoes/pinkDolly.png" alt="Pink Dolly Shoes"></label>
+
+                    <input type="radio" id="violetDolly" name="shoes" value="violetDolly">
+                    <label for="violetDolly"><img src="thumbnails/shoes/violetDolly.png" alt="Violet Dolly Shoes"></label>
+
+                    <input type="radio" id="blueDolly" name="shoes" value="blueDolly">
+                    <label for="blueDolly"><img src="thumbnails/shoes/blueDolly.png" alt="Blue Dolly Shoes"></label>
+                </div>
+
+                <!-- Earrings Options -->
+                <h2 class="collapsible">Earrings</h2>
+                <div class="radio-buttons" id="earrings-options">
+                    <input type="radio" id="noEarrings" name="earrings" value="noEarrings" checked>
+                    <label for="noEarrings"><img src="thumbnails/earrings/noEarrings.png" alt="No Earrings"></label>
+
+                    <input type="radio" id="diamondStuds" name="earrings" value="diamondStuds">
+                    <label for="diamondStuds"><img src="thumbnails/earrings/diamondStuds.png" alt="Diamond Studs"></label>
+
+                    <input type="radio" id="goldHoops" name="earrings" value="goldHoops">
+                    <label for="goldHoops"><img src="thumbnails/earrings/goldHoops.png" alt="Gold Hoops"></label>
+
+                    <input type="radio" id="silverHoops" name="earrings" value="silverHoops">
+                    <label for="silverHoops"><img src="thumbnails/earrings/silverHoops.png" alt="Silver Hoops"></label>
+
+                    <input type="radio" id="heartStuds" name="earrings" value="heartStuds">
+                    <label for="heartStuds"><img src="thumbnails/earrings/heartStuds.png" alt="Heart Studs"></label>
+
+                    <input type="radio" id="hexagonHoops" name="earrings" value="hexagonHoops">
+                    <label for="hexagonHoops"><img src="thumbnails/earrings/hexagonHoops.png" alt="Hexagon Hoops"></label>
+
+                    <input type="radio" id="miniHoops" name="earrings" value="miniHoops">
+                    <label for="miniHoops"><img src="thumbnails/earrings/miniHoops.png" alt="Mini Hoops"></label>
+
+                    <input type="radio" id="ovalEarrings" name="earrings" value="ovalEarrings">
+                    <label for="ovalEarrings"><img src="thumbnails/earrings/ovalEarrings.png" alt="Oval Earrings"></label>
+                </div>
+
+                <!-- Other Features Options -->
+                <h2 class="collapsible">Other Features</h2>
+                <div class="radio-buttons" id="otherFeatures-options">
+                   <!-- <input type="checkbox" id="noFeatures" name="otherFeatures" value="noFeatures" checked>
+                    <label for="noFeatures"><img src="thumbnails/otherFeatures/noFeatures.png" alt="No Features"></label> -->
+
+                    <input type="checkbox" id="moles" name="otherFeatures" value="moles">
+                    <label for="moles"><img src="thumbnails/otherFeatures/moles.png" alt="Moles"></label>
+
+                    <input type="checkbox" id="freckles" name="otherFeatures" value="freckles">
+                    <label for="freckles"><img src="thumbnails/otherFeatures/freckles.png" alt="Freckles"></label>
+
+                    <input type="checkbox" id="faceInk" name="otherFeatures" value="faceInk">
+                    <label for="faceInk"><img src="thumbnails/otherFeatures/faceInk.png" alt="Face Ink"></label>
+
+                    <input type="checkbox" id="leftArmTattoo" name="otherFeatures" value="leftArmTattoo">
+                    <label for="leftArmTattoo"><img src="thumbnails/otherFeatures/leftArmTattoo.png" alt="Left Arm Tattoo"></label>
+
+                    <input type="checkbox" id="rightArmTattoo" name="otherFeatures" value="rightArmTattoo">
+                    <label for="rightArmTattoo"><img src="thumbnails/otherFeatures/rightArmTattoo.png" alt="Right Arm Tattoo"></label>
+
+                    <input type="checkbox" id="legTattoo" name="otherFeatures" value="legTattoo">
+                    <label for="legTattoo"><img src="thumbnails/otherFeatures/legTattoo.png" alt="Leg Tattoo"></label>
+
+                    <input type="checkbox" id="sternumTattoo" name="otherFeatures" value="sternumTattoo">
+                    <label for="sternumTattoo"><img src="thumbnails/otherFeatures/sternumTattoo.png" alt="Sternum Tattoo"></label>
+
+                    <input type="checkbox" id="noseStud" name="otherFeatures" value="noseStud">
+                    <label for="noseStud"><img src="thumbnails/otherFeatures/noseStud.png" alt="Nose Stud"></label>
+
+                    <input type="checkbox" id="noseRing" name="otherFeatures" value="noseRing">
+                    <label for="noseRing"><img src="thumbnails/otherFeatures/noseRing.png" alt="Nose Ring"></label>
+
+                    <input type="checkbox" id="septum" name="otherFeatures" value="septum">
+                    <label for="septum"><img src="thumbnails/otherFeatures/septum.png" alt="Septum"></label>
+                </div> 
+            </div>
+            </div>
+
+            <!-- Character Preview -->
+            <div class="preview-container"> 
+            <div id="character-preview">
+                <div id="loader" style="display: none;">
+                    <img src="loader.gif" alt="Loading..." />
+                </div>
+                <img src="" alt="Character Preview">
+            </div>
+
+            <!-- Submit Button -->
+            <button id="submit-button" onclick="submitDesign()">Submit Design</button>
+            </div>
+            <div id="hidden-container" style="display: none;"></div>
+        </div>
+
+    </main>
+    <script>
+        // Function to handle submitting the design
+        function submitDesign() {
+            // Your submission logic here...
+            alert("Design submitted!"); // For demonstration purposes
+        }
+    </script>
 </body>
-</html>   
+</html>    

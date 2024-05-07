@@ -73,15 +73,32 @@ document.addEventListener("DOMContentLoaded", function () {
         const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
       //  const otherFeaturesImagePaths = Array.from(selectedOtherFeaturesNodes).map(node => 'fullImages/otherFeatures/' + node.value + '.png');        
         const CameraImagePath = 'fullImages/camera.png';
-
-        // Handle multiple selections for otherFeatures
-        const selectedOtherFeaturesNodes = document.querySelectorAll('input[name="otherFeatures"]:checked');
-        let otherFeaturesImagePaths = [];
-        selectedOtherFeaturesNodes.forEach(node => {
-            const featureValue = node.value;
-            const imagePath = 'fullImages/otherFeatures/' + featureValue + '.png';
-            otherFeaturesImagePaths.push(imagePath);
-        });
+  // Handle multiple selections for otherFeatures
+  const selectedOtherFeaturesNodes = document.querySelectorAll('input[name="otherFeatures"]:checked');
+  let otherFeaturesImagePaths = [];
+  selectedOtherFeaturesNodes.forEach(node => {
+      const featureValue = node.value;
+      let imagePath;
+      if (featureValue === 'freckles') {
+          switch (selectedSkin) {
+              case 'fair':
+                  imagePath = 'fullImages/otherFeatures/frecklesFair.png';
+                  break;
+              case 'tan':
+                  imagePath = 'fullImages/otherFeatures/frecklesTan.png';
+                  break;
+              case 'deep':
+              case 'deeper':
+                  imagePath = 'fullImages/otherFeatures/frecklesDeep.png';
+                  break;
+              default:
+                  imagePath = 'fullImages/otherFeatures/' + featureValue + '.png';
+          }
+      } else {
+          imagePath = 'fullImages/otherFeatures/' + featureValue + '.png';
+      }
+      otherFeaturesImagePaths.push(imagePath);
+  });
 
 
         // Construct an array of image paths

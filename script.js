@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+     // Get all the checkboxes for the other features
+     var checkboxes = document.querySelectorAll('input[name="otherFeatures"]');
+
+     // Listen for changes on the checkboxes
+     checkboxes.forEach(function(checkbox) {
+         checkbox.addEventListener('change', function() {
+             updatePreview();
+         });
+     }); 
+     
     function updatePreview() {
 
         // Get the selected options
@@ -42,33 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedHairColorContainer) {
             selectedHairColorContainer.style.display = "block";
         }
-
-        
-
+    
         const selectedHairColor = document.querySelector('input[name="hair-color"]:checked').value;
         const selectedTops = document.querySelector('input[name="tops"]:checked').value;
         const selectedBottoms = document.querySelector('input[name="bottoms"]:checked').value;
         const selectedShoes = document.querySelector('input[name="shoes"]:checked').value;
         const selectedEarrings = document.querySelector('input[name="earrings"]:checked').value;
-        
-        // Handle multiple selections for otherFeatures
-    const selectedOtherFeaturesNodes = document.querySelectorAll('input[name="otherFeatures"]:checked');
-    let otherFeaturesImagePaths = [];
-    selectedOtherFeaturesNodes.forEach(node => {
-        const featureValue = node.value;
-        const imagePath = 'fullImages/otherFeatures/' + featureValue + '.png';
-        otherFeaturesImagePaths.push(imagePath);
-    });
 
-        // Get all the checkboxes for the other features
-        var checkboxes = document.querySelectorAll('input[name="otherFeatures"]:checked');
-
-        // Listen for changes on the checkboxes
-        checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                updatePreview();
-            });
-        });
         
         // Construct the path of the full-size image for each selected option
         const backgroundImagePath = 'fullImages/background/' + selectedBackground + '.png';
@@ -79,8 +69,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const bottomsImagePath = 'fullImages/bottoms/' + selectedBottoms + '.png';
         const topsImagePath = 'fullImages/tops/' + selectedTops + '.png';
         const earringsImagePath = 'fullImages/earrings/' + selectedEarrings + '.png';
-        const otherFeatures = Array.from(selectedOtherFeaturesNodes).map(node => node.value);
+      //  const otherFeaturesImagePaths = Array.from(selectedOtherFeaturesNodes).map(node => 'fullImages/otherFeatures/' + node.value + '.png');        
         const CameraImagePath = 'fullImages/camera.png';
+
+        // Handle multiple selections for otherFeatures
+        const selectedOtherFeaturesNodes = document.querySelectorAll('input[name="otherFeatures"]:checked');
+        let otherFeaturesImagePaths = [];
+        selectedOtherFeaturesNodes.forEach(node => {
+            const featureValue = node.value;
+            const imagePath = 'fullImages/otherFeatures/' + featureValue + '.png';
+            otherFeaturesImagePaths.push(imagePath);
+        });
+
 
         // Construct an array of image paths
         const imagePaths = [
@@ -96,11 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
             CameraImagePath
         ];
  // Add the selected features to the character preview
- otherFeatures.forEach(function(feature) {
-    var img = document.createElement('img');
-    img.src = 'thumbnails/otherFeatures/' + feature + '.png';
-    characterPreview.appendChild(img);
-});
+   // otherFeatures.forEach(function(feature) {
+   // var img = document.createElement('img');
+   // img.src = 'thumbnails/otherFeatures/' + feature + '.png';
+   // characterPreview.appendChild(img);
+//});
 
         const hiddenContainer = document.getElementById('hidden-container');
 

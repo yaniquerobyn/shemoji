@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const characterPreview = document.getElementById("character-preview");
     const coll = document.querySelectorAll(".collapsible");
+    const loader = document.getElementById('loader'); // Loader element
+
 
     // Add click event listeners to each heading
     coll.forEach(item => {
@@ -113,12 +115,21 @@ document.addEventListener("DOMContentLoaded", function () {
             img.onerror = reject;
             img.src = path;
         }));
+        // Show the loader before starting the image loading process
+        loader.style.display = 'block';
 
         Promise.all(imageLoadPromises).then((paths) => {
             const previewHTML = paths.map(path => `<img src="${path}" alt="Character Image" style="position: absolute;">`).join('');
             characterPreview.innerHTML = previewHTML;
             hiddenContainer.innerHTML = ''; // Clear the hidden container
-        }).catch(error => console.error("Failed to load images", error));
+       // Hide the loader when all images have loaded
+       loader.style.display = 'none';
+    }).catch(error => {
+        console.error("Failed to load images", error);
+
+        // Hide the loader if there was an error
+        loader.style.display = 'none';
+    });
     }
 
     const options = document.querySelectorAll('input[type="radio"]');

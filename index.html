@@ -6,31 +6,11 @@
             <title>Character Customizer</title>
             <link rel="stylesheet" href="styles.css">
             <script src="script.js" defer></script>
-            <style>
-                /* Your CSS styles here */
-                /* Loader CSS */
-                .loader {
-                    border: 16px solid #f3f3f3;
-                    border-top: 16px solid #3498db;
-                    border-radius: 50%;
-                    width: 120px;
-                    height: 120px;
-                    animation: spin 2s linear infinite;
-                    margin: auto;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 1000; /* Ensure loader appears on top */
-                    display: none; /* Initially hidden */
-                }
-                @keyframes spin {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-            </style>
         </head>
         <body>
+            <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
         <!-- CHARACTER CUSTOMIZER -->
         <header>
             <h1>Character Customizer</h1>
@@ -304,9 +284,9 @@
                         <input type="radio" id="curlySpaceBuns-lightBrown" name="hair-color" value="lightBrown">
                         <label for="curlySpaceBuns-lightBrown"><img src="thumbnails/hairstyle/curlySpaceBuns/lightBrown.png" alt="Light Brown"></label>
                         <input type="radio" id="curlySpaceBuns-ginger" name="hair-color" value="ginger">
-                        <label for="curlySpaceBuns-ginger"><img src="thumbnails/hairstyle/curlySpaceBuns/black.png" alt="Ginger"></label>
+                        <label for="curlySpaceBuns-ginger"><img src="thumbnails/hairstyle/curlySpaceBuns/ginger.png" alt="Ginger"></label>
                         <input type="radio" id="curlySpaceBuns-red" name="hair-color" value="red">
-                        <label for="curlySpaceBuns-red"><img src="thumbnails/hairstyle/curlySpaceBuns/ginger.png" alt="Red"></label>
+                        <label for="curlySpaceBuns-red"><img src="thumbnails/hairstyle/curlySpaceBuns/red.png" alt="Red"></label>
                         <input type="radio" id="curlySpaceBuns-blue" name="hair-color" value="blue">
                         <label for="curlySpaceBuns-blue"><img src="thumbnails/hairstyle/curlySpaceBuns/blue.png" alt="Blue"></label>
                         <input type="radio" id="curlySpaceBuns-green" name="hair-color" value="green">
@@ -679,6 +659,9 @@
             <!-- Character Preview -->
             <div class="preview-container"> 
             <div id="character-preview">
+                <div id="loader" style="display: none;">
+                    <img src="loader.gif" alt="Loading..." />
+                </div>
                 <img src="" alt="Character Preview">
             </div>
 
